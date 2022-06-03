@@ -1,0 +1,74 @@
+{% extends 'front_web/base.html' %} {%load static%} {% block content %}
+    
+    
+    <!--Start: Hero Section-->
+    <div id="hero-secondary">
+        <div class="hero-heading">
+            <h2>Contact us</h2>
+            <h5>
+                <ion-icon name="home"></ion-icon> / Contact us
+            </h5>
+        </div>
+        <div class="color-overlay"></div>
+    </div>
+    <!--End: Hero Section-->
+
+    <!--Start: Contact Form and Info Section-->
+    <section id="contact">
+        <div class="form">
+            <h4>Get In Touch</h4>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+            <form action="submit">
+                <input type="text" placeholder="First name" required>
+                <input type="text" placeholder="Second name" required><br>
+                <input type="email" placeholder="Your e-mail" required>
+                <input type="number" placeholder="Your phone number" required> <br>
+                <input type="text" placeholder="Subject" required><br>
+                <select name="Select topic" id="" required>
+                    <option value="lorem">Select topic</option>
+                    <option value="lorem">Lorem</option>
+                    <option value="lorem">Lorem</option>
+                    <option value="lorem">Lorem</option>
+                    <option value="lorem">Lorem</option>
+                    <option value="lorem">Lorem</option>
+                </select><br>
+                <textarea rows="8" cols="77" name="comment" form="usrform">Message</textarea><br>
+                <input type="submit" value="Send message" class="inp-btn">
+            </form>
+        </div>
+        <div class="contact-info">
+            <div class="text">
+                <h4>Contact Info</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div class="info">
+                <p> <i class="fa-solid fa-location-dot"></i> Sarajevska bb, 71000 Sarajevo, B&H</p>
+                <p> <i class="fa-solid fa-phone"></i> +387 61 000 000 | +387 33 000 000 </p>
+                <p> <i class="fa-solid fa-envelope"></i> info@keeptrack.com</p>
+            </div>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon-list-contact">
+                    <ul>
+                        <li> <a href="#"> <i class="fa-brands fa-facebook-f"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa-brands fa-twitter"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa-brands fa-linkedin-in"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa-brands fa-youtube-square"></i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End: Contact Form and Info Section-->
+
+    <!--Start: Contact Map Section-->
+    <section id="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.0382798601054!2d18.384143914820267!3d43.85503524737479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c991e2f52b45%3A0x4677ab221ff73164!2sSarajevo%20Tower!5e0!3m2!1shr!2sba!4v1650034729197!5m2!1shr!2sba"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <!--End: Contact Map Section-->
+
+
+{% endblock content %}

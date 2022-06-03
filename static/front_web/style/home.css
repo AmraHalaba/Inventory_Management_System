@@ -1,0 +1,574 @@
+/*START: HOMEPAGE*/
+/*Start: Main Section 1 - Short About*/
+#short-about {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    background-color: var(--c12);
+    padding:40px;
+    align-items:center;
+    height:auto;
+    width:100%;
+}
+
+#short-about .text {
+    width: 50%;
+    height: auto;
+}
+
+#short-about .image {
+    width: auto;
+    height:auto;
+}
+
+#short-about .image img{
+    /* width: 100%; */
+    /* height: 30rem; */
+    /* object-fit: contain; */
+    object-fit: cover;
+}
+
+#short-about h4 {
+    font-weight: var(--fw3);
+    /* font-size: var(--fs14); */
+    font-size:30px;
+    color: var(--c1);
+    padding-bottom:15px;
+    line-height: var(--lh2);
+}
+
+#short-about h4  span {
+    color: var(--c4);
+    font-weight: var(--fw4);
+}
+
+/* #short-about hr {
+    margin-left: 40px;
+} */
+
+#short-about p {
+    font-size: var(--fs9);
+    padding: 10px 0 0 0;
+}
+
+#short-about button {
+    margin-top: 48px;
+}
+/*End: Main Section 1 - Short About*/
+
+/*Start: Main Section 2 - Services Provided*/
+#services {
+    width: 100%;
+    background-color: var(--c8);
+}
+
+#services h4 {
+    color: var(--c1);
+    text-align: center;
+    font-size: var(--fs3);
+    line-height: 35px;
+}
+
+#services h6 {
+    color: var(--c4);
+    font-weight: var(--fw4);
+    text-align: center;
+    padding-top: 0;
+    font-size: var(--fs3);
+    line-height: var(--lh5);
+    padding-top: 10px;
+    line-height: 35px;
+}
+
+#services hr {
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+#services p {
+    font-size: var(--fs9);
+    margin: 0;
+    padding: 10px 80px 0 80px;
+    text-align: center;
+}
+
+#services .cards {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#services .card {
+    display: flex;
+    width: 20%;
+    height: 18rem;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 34px rgba(var(--bsc1), 0.03);
+    border-radius: var(--br2);
+}
+
+#services .card:first-child,
+#services .card:nth-child(2),
+#services .card:nth-child(3) {
+    margin-right: 50px;
+}
+
+#services .card img {
+    width: 80%;
+    height: 10rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-radius: var(--br2);
+}
+
+#services .card h6 {
+    padding-top: 20px;
+    color: var(--c3);
+    font-size: var(--f15);
+}
+
+#services .card:hover {
+    box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#services button {
+    height: 2rem;
+    width: 5.5rem;
+    margin: 20px 0 20px 0;
+}
+
+#services button:hover {
+    background-color: var(--c2);
+}
+/*End: Main Section 2 - Services Provided*/
+
+/*Start: Main Section 3 - Demo Section*/
+#demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.demo-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: var(--c2);
+}
+
+#demo .image {
+    width: 50%;
+    padding-left: 100px;
+    padding-top: 40px;
+}
+
+#demo .text {
+    width: 50%;
+}
+
+#demo h4 {
+    font-weight: var(--fw3);
+    color: var(--c1);
+    text-align: left;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+#demo h4 span {
+    color: var(--c4);
+    padding-top: 100px;
+    font-weight: var(--fw4);
+}
+
+#demo a ion-icon {
+    font-size: 50px;
+    color: var(--c4);
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--br4);
+}
+
+#demo a ion-icon:hover {
+    color: var(--c5);
+}
+/*End: Main Section 3 - Demo Section*/
+
+/*Start: Main Section 4 - Strengths*/
+#strengths {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--c8);
+    background-size: cover;
+    padding:0 40px;
+    height:auto;
+}
+
+#strengths .image {
+    width: 50%;
+    /* height: 100%; */
+    padding: 0;
+    margin: 0;
+}
+
+#strengths .image img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+
+#strengths .text {
+    width: 50%;
+    padding:40px;
+}
+
+#strengths .text h4 {
+    font-size: var(--fs3);
+}
+
+#strengths .text h4 span {
+    color: var(--c4);
+    font-weight: var(--fw4);
+}
+
+#strengths .text p {
+    /* padding-left: 40px; */
+    padding-bottom: 15px;
+    font-size: var(--fs9);
+}
+
+#strengths .text .list {
+    font-size: var(--fs11);
+    padding: 8px;
+}
+
+#strengths .true{
+    width: 25px;
+    height: 25px;
+    background-color: var(--c7);
+    color: var(--c4);
+    text-align: center;
+    border-radius: 70% 30% 30% 70%/60% 40% 60% 40%;
+    padding-top: 5px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+#strengths .fa-check {
+    font-size: var(--fs10);
+    cursor: pointer;
+    transition: 0.2 ease;
+    /* margin-left: 30px; */
+    background-color: var(--c7); 
+    color: var(--c4); 
+}
+
+#strengths .fa-check:hover {
+    background-color: var(--c5);
+    color: var(--c2);
+    box-shadow: 0 0 11px rgba(86, 196, 12, 0.2); 
+}
+/*End: Main Section 4 - Strengths*/
+
+/*Start: Main Section 4 - Benefits*/
+#benefits {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--c8);
+    padding:0 40px;
+}
+
+#benefits .image {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+}
+
+#benefits .image img {
+    width: 100%;
+    height: 100%;
+}
+
+#benefits .text {
+    width: 50%;
+    height: 100%;
+    padding:40px 40px 0 0;
+}
+
+#benefits .text h4 {
+    font-size: var(--fs3);
+    font-weight: var(--fw4);
+}
+
+#benefits .text h4 span {
+    color: var(--c4);
+    font-weight: var(--fw4);
+    font-size: var(--fs3);
+}
+
+#benefits .boxes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* margin-left: 40px;
+    margin-top: 40px; */
+    width: 100%;
+}
+
+#benefits .box {
+    width: 50%;
+    height: 50%;
+    box-shadow: 0px 0px 2px 0px rgba(204,231,208, 0.5)
+}
+
+#benefits .box h6 {
+    font-size: var(--fs11);
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+#benefits .box p {
+    font-size: var(--fs12);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#benefits .fa-solid {
+    width: 40px;
+    height: 40px;
+    background-color: var(--c7);
+    color: var(--c4);
+    text-align: center;
+    border-radius: 70% 30% 30% 70%/60% 40% 60% 40%;
+    padding-top: 5px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+#benefits .fa-user-doctor,
+#benefits .fa-truck,
+#benefits .fa-arrows-to-eye,
+#benefits .fa-globe {
+    font-size: var(--fs10);
+    cursor: pointer;
+    transition: 0.2 ease;
+    margin-left: 15px;
+    margin-top: 15px;
+    background-color: var(--c2); 
+    color: var(--c4); 
+    padding-top: 15px;
+}
+
+#benefits .box:hover .fa-user-doctor,
+#benefits .box:hover .fa-truck,
+#benefits .box:hover .fa-arrows-to-eye,
+#benefits .box:hover .fa-globe {
+    background-color: var(--c4);
+    color: var(--c2);
+    box-shadow: 0 0 11px rgba(86, 196, 12, 0.2); 
+}
+
+/*End: Main Section 5 - Benefits*/
+
+/*Start: Main Section 6 - People*/
+#people {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#people .text {
+    margin-top: 40px;
+    padding: 0;
+}
+
+#people h4 {
+    font-weight: var(--fw3);
+    color: var(--c1);
+    text-align: center;
+    padding-top: 10px;
+    font-size: var(--fs3);
+    line-height: 35px;
+}
+
+#people h4 span {
+    color: var(--c4);
+    text-align: center;
+    font-weight: var(--fw4);
+    line-height: 35px;
+}
+
+#people hr {
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+#people p {
+    font-size: var(--fs10);
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#people .cards {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+#people .card {
+    display: flex;
+    width: 20%;
+    height: 18rem;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 34px rgba(var(--bsc1), 0.03);
+    border-radius: var(--br2);
+}
+
+#people .card:first-child,
+#people .card:nth-child(2),
+#people .card:nth-child(3),
+#people .card:nth-child(5),
+#people .card:nth-child(6),
+#people .card:nth-child(7) {
+    margin-right: 50px;
+}
+
+#people .card:nth-child(5),
+#people .card:nth-child(6),
+#people .card:nth-child(7),
+#people .card:nth-child(8) {
+    margin-top: 50px;
+}
+
+#people .card:hover {
+    box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#people .card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+#people .card-image {
+    width: 30%;
+}
+
+#people .card-image img {
+    width: 50%;
+    border-radius: 20%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#people .card-name {
+    width: 70%;
+}
+
+#people .card-name h6 {
+    font-size: var(--fs10);
+    text-align: left;
+}
+
+#people .card-name h6:hover {
+    color: var(--c11);
+}
+
+#people .card-name p {
+    font-size: var(--fs12);
+    text-align: left;
+}
+
+#people .review-text p {
+    font-size: var(--fs12);
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+}
+
+#people .card a {
+    margin-top: 30px;
+    color: var(--c3);
+    font-size: var(--fs12);
+}
+
+#people .card a:hover {
+    color: var(--c4);
+}
+/*End: Main Section 6 - People*/
+
+/*Start: Banner*/
+#banner-img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-image: url(../images/Homepage/banner-lower.jpg);
+    background-size: cover;
+    background-position: top 25% right 0%;
+}
+
+#banner-img .circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+#banner-img h4, 
+#banner-img h6 {
+    color: var(--c2);
+    text-align: center;
+}
+
+#banner-img h4 {
+    font-weight: var(--fw2);
+}
+
+#banner-img h6 {
+    font-size: var(--fs10);
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+#banner-img .fa-solid {
+    color: var(--c2);
+    margin-bottom: 15px;
+    font-size: var(--fs3);
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 30px;
+}
+/*End: Banner*/
+/*END: HOMEPAGE*/

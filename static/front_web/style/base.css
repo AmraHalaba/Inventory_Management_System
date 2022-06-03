@@ -1,0 +1,678 @@
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*START: GENERAL SYTLES*/
+
+/*Start: Overall*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+/*End: Overall*/
+
+/*Start: Base Style*/
+:root {
+    /*Colors*/
+    --c1: #000000;
+    /*crna - za naslove glavne*/
+    --c2: #ffffff;
+    /*bijela - naslov u hero, nazivi u headingu, pozadina za bijele sekcije*/
+    --c3: #172b4c;
+    /*tamno plava - footer background color i contact page contact info box, boja teksta cijelog*/
+    --c4: #6cbbfa;
+    /*svijetlo plava - buttons, decorations*/
+    --c5: #0080ff;
+    /*button (primary i secondary) hover background*/
+    --c6: #6c757d;
+    /*main paragraph text color */
+    --c7: #d4ecff;
+    /*background color za button secondary*/
+    --c8: #f8f9fa;
+    /*background za section-e*/
+
+    /*Box shadow color*/
+    --bsc1: 0, 0, 0;
+    --bsc2: 70, 62, 221;
+
+    /*Line heights*/
+    --lh1: 64px;
+    --lh2: 54px;
+    --lh3: 25px;
+    --lh4: 1;
+    --lh5: 30px;
+    --lh6: 1.5px;
+    --lh7: 17px;
+
+    /*Font sizes*/
+    --fs1: 50px;
+    --fs2: 40px;
+    --fs3: 30px;
+    --fs4: 28px;
+    --fs5: 26px;
+    --fs6: 24px;
+    --fs7: 22px;
+    --fs8: 20px;
+    --fs9: 16px;
+    --fs10: 15px;
+    --fs11: 14px;
+    --fs12: 12px;
+    --fs13: 10px;
+    --fs14: 36px;
+    --fs15: 18px;
+
+    /*Font weights*/
+    --fw1: 400;
+    --fw2: 500;
+    --fw3: 600;
+    --fw4: 700;
+    --fw5: 800;
+    --fw6: 900;
+
+    /*Border radiuses*/
+    --br1: 4px;
+    --br2: 6px;
+    --br3: 20px;
+    --br4: 25px;
+    --br5: 50%;
+    --br6: 40px;
+}
+
+/*Typography*/
+h1 {
+    font-size: var(--fs3);
+    color: var(--c2);
+    line-height: var(--lh3);
+}
+
+h2 {
+    font-size: var(--fs2);
+    color: var(--c3);
+    line-height: var(--lh2);
+}
+
+h4 {
+    font-size: var(--fs6);
+    color: var(--c3);
+    line-height: var(--lh5);
+    font-weight: var(--fw4);
+}
+
+h6 {
+    font-weight: var(--fw1);
+    font-size: var(--fs5);
+    color: var(--c3);
+}
+
+p {
+    font-size: var(--fs9);
+    color: var(--c3);
+}
+
+/*Padding and Margins global*/
+.section-p1 {
+    /*padding for sections*/
+    padding: 40px 0 40px 0;
+}
+
+.section-p2 {
+    padding: 100px 0 80px 0;
+}
+
+.section-m1 {
+    /*margin for sections*/
+    margin: 40px 0;
+}
+
+.section-m2 {
+    padding: 40px 0 0 0;
+}
+
+.section-m3 {
+    padding: 0 0 40px 0;
+}
+
+/*Buttons global*/
+button.primary {
+    background-color: var(--c4);
+    border: none;
+    font-size: var(--fs12);
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    font-weight: var(--fw2);
+    font-size: var(--fs10);
+    border-radius: var(--br1);
+    outline: none;
+    transition: ease 0.2s;
+    width: 8rem;
+    margin-top: 5px;
+}
+
+button.primary a {
+    color: var(--c2);
+}
+
+button.primary:hover {
+    background-color: var(--c5);
+    box-shadow: 0 0 11px rgba(86, 196, 12, 0.2);
+}
+
+button.primary:hover a {
+    color: var(--c2);
+}
+
+/* button.footer {
+    background-color: var(--c4);
+    border: none;
+    font-size: var(--fs12);
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    font-weight: var(--fw2);
+    font-size: var(--fs10);
+    border-radius: var(--br1);
+    outline: none;
+    transition: ease 0.2s;
+    width: 8rem;
+    margin-top: 5px;
+}
+
+button.footer a {
+    color: var(--c2);
+}
+
+button.footer:hover {
+    background-color: var(--c5);
+    box-shadow: 0 0 11px rgba(86, 196, 12, 0.2);    
+}
+
+button.footer:hover a {
+    color: var(--c2);
+} */
+
+button.secondary {
+    background-color: var(--c7);
+    border: none;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-weight: var(--fw2);
+    font-size: var(--fs10);
+    border-radius: var(--br1);
+    outline: none;
+    transition: ease 0.2s;
+    margin-top: 30px;
+}
+
+button.secondary a {
+    color: var(--c4);
+    font-size: var(--fs12);
+}
+
+button.secondary:hover {
+    background: red;
+    box-shadow: 0 0 11px rgba(86, 196, 12, 0.2);
+}
+
+button.secondary:hover a {
+    color: var(--c4);
+    font-weight: var(--fw4);
+}
+
+/*Decorations*/
+hr.long-line {
+    height: 1px;
+    width: 100px;
+    background-color: var(--c4);
+    border: none;
+    padding-bottom: 8px;
+    margin-bottom: 35px;
+    margin-top: 5px;
+}
+
+hr.short-line {
+    height: 1px;
+    width: 100px;
+    background-color: var(--c4);
+    border: none;
+    padding-bottom: 8px;
+    margin-bottom: 35px;
+    margin: 15px 0 20px;
+}
+
+/*Body style*/
+body {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*End: Base Style*/
+
+
+/*END: GENERAL SYTLES*/
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+
+/*START: BASE HTML*/
+
+/*Start: Header*/
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background: var(--c3);
+    box-shadow: 0 10px 10px -10px var(--c4);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    filter: drop-shadow(5px 5px 5px #222222);
+    /* box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #cccccc; */
+}
+
+#header .logo {
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0.5rem 0.5rem black, -0.3rem -0.3rem #cccccc;
+}
+
+#header .logo img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+#navbar li {
+    padding: 0 20px;
+    position: relative;
+    /*we enter this for the underline effect when hovering the link in navbar or underline effect under link of page that we are currently at. here it will be relative (since this is parent class) and absolute in child class below*/
+}
+
+#navbar .headersearch {
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+#navbar li a {
+    font-size: var(--fs9);
+    color: var(--c2);
+    font-weight: var(--fw1);
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+#navbar li ion-icon {
+    font-size: var(--fs4);
+    color: var(--c2);
+}
+
+#navbar li ion-icon:hover {
+    color: var(--c4);
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: var(--c4);
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: var(--c4);
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+}
+
+.headersearch {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-content: center;
+    /* margin-right: 7px; */
+}
+
+.headersearch .fa {
+    position: absolute;
+    top: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 10px;
+    color: white;
+}
+
+.searchbox_slide {
+    width: 300px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    border-radius: 40px;
+}
+
+.search_slide input {
+    border: none;
+    outline: none;
+    padding-left: 20px;
+}
+
+#search_click {
+    opacity: 0;
+    width: 0px;
+}
+
+#search_click:checked+.search_slide {
+    width: 300px;
+}
+
+.search_slide {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+/*End: Header*/
+
+/*Start: Sidebar Social Icons*/
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    /* margin-left: 96.3%; */
+    right: 0;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    transform: all 0.3s ease;
+    color: white;
+    font-size: var(--fs13);
+}
+
+.icon-bar a:hover {
+    filter: brightness(70%);
+}
+
+.facebook {
+    background: #3b5998;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.twitter {
+    background: #1da1f2;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.linkedin {
+    background: #007bb5;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.youtube {
+    background: #ff0000;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/*End: Sidebar Social Icons*/
+
+/*start: Hero Primary Section*/
+#hero-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: end;
+    height: 90vh;
+    width: 100%;
+    background-image: url(../images/Base/banner.jpg);
+    background-size: cover;
+    background-position: top 25% right 0%;
+}
+
+#hero-primary .hero-heading {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#hero-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    background-image: url(../images/Base/banner.jpg);
+    background-size: cover;
+    background-position: top 25% right 0%;
+    position: relative;
+    text-align: center;
+}
+
+#hero-primary .color-overlay {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .7;
+    position: absolute;
+}
+
+#hero-primary .hero-heading {
+    z-index: 1;
+}
+
+#hero-primary .hero-heading h1 {
+    margin-bottom: 20px;
+}
+
+/*End: Hero Primary Section*/
+
+/*start: Hero Secondary Section*/
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: end;
+    height: 90vh;
+    width: 100%;
+    background-image: url(../images/Base/banner.jpg);
+    background-size: cover;
+    background-position: top 25% right 0%;
+}
+
+#hero .hero-heading {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#hero-secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    background-image: url(../images/Base/banner.jpg);
+    background-size: cover;
+    background-position: top 25% right 0%;
+    position: relative;
+    text-align: center;
+}
+
+#hero-secondary .color-overlay {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .7;
+    position: absolute;
+}
+
+#hero-secondary .hero-heading {
+    z-index: 1;
+}
+
+#hero-secondary .hero-heading h2 {
+    margin-top: 20px;
+    color: var(--c2);
+    font-size: var(--fs5);
+    font-weight: 500;
+}
+
+#hero-secondary .hero-heading h5 {
+    margin-top: 20px;
+    color: var(--c2);
+    font-size: var(--fs10);
+    font-weight: 200;
+}
+
+/*End: Hero Secondary Section*/
+
+/*Start: Footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: var(--c3);
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 40px 40px 40px;
+    width: 25%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer h6 {
+    font-size: var(--fs11);
+    font-weight: var(--fw4);
+    padding-bottom: 20px;
+    color: var(--c2);
+}
+
+footer p {
+    font-size: var(--fs12);
+    margin: 0 0 8px 0;
+    color: var(--c2);
+    line-height: var(--lh7);
+}
+
+footer a {
+    font-size: var(--fs12);
+    color: var(--c1);
+    margin-bottom: 10px;
+    color: var(--c2);
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: var(--c2);
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: var(--c4);
+    transition: 0.3 ease;
+}
+
+.col .col-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+footer .icon .fa-brands {
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+.col .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.col input {
+    padding: 10px 10px 10px 10px;
+    font-size: var(--fs12);
+    margin-top: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border: 1px solid var(--c19);
+    border-radius: var(--br1);
+    outline: none;
+}
+
+footer .copyright {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    border-top: 1px solid var(--c6);
+    margin-top: 20px;
+    padding: 20px 40px 0px 40px;
+}
+
+footer .copyright .fa-brands {
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+/*End: Footer*/
+
+/*END: BASE HTML*/
+
+/*----------------------------------------------------------------------------------------------------------------*/

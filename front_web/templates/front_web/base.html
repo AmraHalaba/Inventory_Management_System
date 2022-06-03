@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KeepTrack Inventory Management System | Homepage</title>
+
+    <!--LINK FOR FAVICON ICON-->
+    <link rel="icon" type="image/x-icon" href="{% static 'front_web/images/Base/favicon.png' %}">
+
+    <!--LINK FOR MATERIAL ICONS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!--LINK FOR FONTAWESOME ICONS-->
+    <script src="https://kit.fontawesome.com/078f76df49.js" crossorigin="anonymous"></script>
+
+    <!--LINK FOR GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!--LINK FOR MAIN-STYLE CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/pricing.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/about.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/contact.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/demo.css' %}">
+
+</head>
+
+<body>
+    <!--Start: Header-->
+    <section id="header" class="section-p1">
+        <a href="index_home.html"> <img src="{% static 'front_web/images/Base/logo3.jpg' %}" class="logo" alt="Logo"> </a>
+        <div>
+            <ul id="navbar">
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li><a href="{% url 'aboutpage' %}">About</a></li>
+                <li><a href="{% url 'pricingpage' %}">Pricing</a></li>
+                <li><a href="{% url 'contactpage' %}">Contact</a></li>
+                <li><a href="{% url 'demopage' %}">Demo</a></li>
+                <div class="headersearch">
+                    <label for="search_click"> <i class="fa fa-search"></i> </label>
+                    <input type="checkbox" id="search_click">
+                    <div class="search_slide">
+                        <input type="text" class="searchbox_slide" placeholder="Search...">
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </section>
+    <!--End: Header-->
+
+    <!--Start: Sidebar Social Icons-->
+    <div class="icon-bar">
+        <a href="#" class="facebook"> <i class="fa-brands fa-facebook-f"></i> </a>
+        <a href="#" class="twitter"> <i class="fa-brands fa-twitter"></i> </a>
+        <a href="#" class="linkedin"> <i class="fa-brands fa-linkedin-in"></i> </a>
+        <a href="#" class="youtube"> <i class="fa-brands fa-youtube-square"></i> </a>
+    </div>
+    <!--End: Sidebar Social Icons-->
+
+
+    <div class="content">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    
+
+
+<!--Start: Footer-->
+<footer class="section-p1">
+    <div class="col">
+        <h6>About</h6>
+        <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et
+            Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Exercitation Ullamco Laboris</p>
+        <br>
+        <p>Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse Cillum.</p>
+    </div>
+    </div>
+    <div class="col">
+        <h6>Quick Link</h6>
+        <a href="#">
+            <ion-icon name="arrow-redo-sharp"></ion-icon> About
+        </a>
+        <a href="#">
+            <ion-icon name="arrow-redo-sharp"></ion-icon> FAQs
+        </a>
+        <a href="contact_index.html">
+            <ion-icon name="arrow-redo-sharp"></ion-icon> Contact
+        </a>
+        <a href="#">
+            <ion-icon name="arrow-redo-sharp"></ion-icon> Listing
+        </a>
+        <a href="#">
+            <ion-icon name="arrow-redo-sharp"></ion-icon> Membership
+        </a>
+    </div>
+    <div class="col col-1">
+        <div class="contact">
+            <h6>Contact Info</h6>
+            <p> <strong>Address: </strong>Sarajevska bb, 71000 Sarajevo, B&H </p>
+            <p> <strong>Phone: </strong> +387 61 000 000 | +387 33 000 000 </p>
+            <p> <strong>Hours: </strong> info@keeptrack.com | support@keeptrack.com </p>
+        </div>
+        <br>
+        <div class="icon">
+            <a href="#"> <i class="fa-brands fa-facebook"></i> </a>
+            <a href="#"> <i class="fa-brands fa-twitter"></i> </a>
+            <a href="#"> <i class="fa-brands fa-linkedin"></i> </a>
+            <a href="#"> <i class="fa-brands fa-youtube"></i> </a>
+        </div>
+    </div>
+    <div class="col">
+        <h6>Subscribe</h6>
+        <p>Sign Up To Our Newsletter</p>
+        <p> And Get The Latest Offers</p>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="primary"> <a href="#">Get Notified </a></button>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div class="left">
+            <p>&copy by KeepTrack - Inventory Management System, 2022.</p>
+        </div>
+        <div class="right">
+            <a href="#"><i class="fa-brands fa-cc-visa"></i></a>
+            <a href="#"><i class="fa-brands fa-cc-mastercard"></i></a>
+            <a href="#"><i class="fa-brands fa-cc-paypal"></i></a>
+            <a href="#"><i class="fa-brands fa-cc-amex"></i></a>
+        </div>
+    </div>
+</footer>
+<!--End: Footer-->
+
+
+<!--LINK FOR ION ICONS-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>    

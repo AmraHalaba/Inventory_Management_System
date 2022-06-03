@@ -1,0 +1,168 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Header -->
+        <div class="header-top">
+            <span class="material-icons bars">menu</span>
+            <span class="text">Create Purchase Return</span>
+            <div class="header-top-options">
+                <nav>
+                    <ul>
+                        <li><a class="head-pos" href="#">POS</a></li>
+                        <li><a class="bell-svg" href="{% url 'report_product_quantity_alert' %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+                                    viewBox="0 0 448 512">
+                                    <path
+                                        d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" />
+                                </svg>
+                            </a></li>
+                    </ul>
+                </nav>
+                <img class="user-img" src="{{ request.user.profile_image.url }}" alt=""></a>
+            </div>
+        </div>
+        <!--End: Header -->
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <div class="title">
+                <h5>Create Purchase Return <span>Purchase Returns | Create Purchase Return</span> </h5>
+                <hr>
+            </div>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table4-->
+            <div class="table-4 create-purchase">
+                <form action="submit">
+                    <div class="row-1">
+                        <div>
+                            <label for="date">Date *</label><br>
+                            <input type="text" placeholder="Enter Date" required>
+                        </div>        
+                        <div>
+                            <label for="supplier">Supplier *</label><br>
+                            <select name="Choose Category" id="" required>
+                                <option value="lorem" disabled selected hidden>Choose Supplier</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                            </select>
+                        </div> 
+                        <div>
+                            <label for="warehouse">Warehouse *</label><br>
+                            <select name="Choose Category" id="" required>
+                                <option value="lorem" disabled selected hidden>Choose Warehouse</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                            </select>
+                        </div>                              
+                    </div>
+
+                    <div class="invoice">
+                        <table class="table-4-1 inovice">
+                            <tr>
+                                <th>#</th>
+                                <th>Product Code</th>
+                                <th>Product Name</th>
+                                <th>Net Unit Cost</th>
+                                <th>Stock</th>
+                                <th>Qty</th>
+                                <th>Discount</th>
+                                <th>Tax</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>Phone</td>
+                                <td>$ 1.000</td>
+                                <td> 1 pc </td>
+                                <td>2</td>
+                                <td>$ 10</td>
+                                <td>$ 17</td>
+                                <td>$ 2.014</td>
+                                <td> <span class="icon"> <ion-icon name="close-circle-outline"></ion-icon> </span> </td>
+                            </tr>
+                                <td>2</td>
+                                <td>456789</td>
+                                <td>Headphones</td>
+                                <td>$ 100</td>
+                                <td> 1 pc </td>
+                                <td>3</td>
+                                <td>$ 0</td>
+                                <td>$ 17</td>
+                                <td>$ 351</td>
+                                <td> <span class="icon"> <ion-icon name="close-circle-outline"></ion-icon> </span> </td>
+                            </tr>
+                        </table>
+                        <table class="table-4-2 summary">
+                            <tr>
+                                <td>Order Tax</td>
+                                <td> <span>$ 0.00 (% 0.00)</span> </td>
+                            </tr>
+                            <tr>
+                                <td>Discount</td>
+                                <td> <span>$ 0.00 (% 0.00)</span> </td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td> <span>$ 0.00</span> </td>
+                            </tr>
+                            <tr>
+                                <td>Grand Total</td>
+                                <td> <span>$ 0.00</span> </td>
+                            </tr>
+                        </table>
+                    </div>   
+                    <div class="row-2">
+                        <div class="percentage">
+                            <label for="order-tax">Order Tax</label><br>
+                            <input type="text" placeholder="0" >
+                        </div>
+                        <div class="currency">
+                            <label for="discount">Discount</label><br>
+                            <input type="text" placeholder="0">
+                        </div> 
+                        <div class="currency">
+                            <label for="shipping">Shipping</label><br>
+                            <input type="text" placeholder="0">
+                        </div>  
+                    </div>    
+                    <div class="row-3">
+                       <div>
+                            <label for="status">Status *</label><br>
+                            <select name="Choose Category" id="" required>
+                                <option value="status" disabled selected hidden>Status</option>
+                                <option value="received">Received</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div> 
+                    </div>                
+                    <div class="row-4">
+                        <label for="product-note">Note</label><br>
+                        <textarea rows="4" cols="50" name="comment" form="usrform">A few words ...</textarea><br>
+                    </div>
+                    <input type="submit" value="Submit" class="btn-submit">
+                </form>
+            </div>
+        </div>
+            <!--End: Create Product Form - Table4-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

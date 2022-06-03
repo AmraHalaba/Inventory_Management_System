@@ -1,0 +1,224 @@
+{% load static %}
+
+<!--Start: Sidebar-->
+    <div class="sidebar close">
+        <div class="logo-details">
+            <img class="logo_image" src="{% static 'system/images/logo3.jpg' %}" alt="Logo">
+            <span class="logo_name">KeepTrack</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="{% url 'dashboard' %}">
+                    <span class="material-icons">dashboard</span>
+                    <span class="link_name first">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">qr_code</span>
+                        <span class="link_name">Products</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Products</a></li>
+                    <li><a href="{% url 'create_product' %}">Create Product</a></li>
+                    <li><a href="{% url 'product_list' %}">Product List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">account_box</span>
+
+                        <span class="link_name">Customers</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Customers</a></li>
+                    <li><a href="{% url 'create_customer' %}">Create Customer</a></li>
+                    <li><a href="{% url 'customer_list' %}">Customer List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">contact_emergency</span>
+                        <span class="link_name">Suppliers</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Suppliers</a></li>
+                    <li><a href="{% url 'create_supplier' %}">Create Supplier</a></li>
+                    <li><a href="{% url 'supplier_list' %}">Supplier List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">warehouse</span>
+                        <span class="link_name">Warehouses</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Warehouses</a></li>
+                    <li><a href="{% url 'create_warehouse' %}">Create Warehouse</a></li>
+                    <li><a href="{% url 'warehouse_list' %}">Warehouse List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">category</span>
+                        <span class="link_name">Categories</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Categories</a></li>
+                    <li><a href="{% url 'create_category' %}">Create Category</a></li>
+                    <li><a href="{% url 'category_list' %}">Category List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">branding_watermark</span>
+
+                        <span class="link_name">Brands</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Brands</a></li>
+                    <li><a href="{% url 'create_brand' %}">Create Brand</a></li>
+                    <li><a href="{% url 'brand_list' %}">Brand List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">point_of_sale</span>
+                        <span class="link_name">Sales</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Sales</a></li>
+                    <li><a href="{% url 'create_sales' %}">Create Sale</a></li>
+                    <li><a href="{% url 'sales_list' %}">Sales List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">shopping_cart</span>
+
+                        <span class="link_name">Purchases</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Purchases</a></li>
+                    <li><a href="{% url 'create_purchase' %}">Create Purchase</a></li>
+                    <li><a href="{% url 'purchase_list' %}">Purchase List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">arrow_right_alt</span>
+
+                        <span class="link_name">Sales Returns</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Sales Returns</a></li>
+                    <li><a href="{% url 'create_sales_return' %}">Create Sales Return</a></li>
+                    <li><a href="{% url 'sales_return_list' %}">Sales Return List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">keyboard_return</span>
+                        <span class="link_name">Purchase Returns</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Purchase Returns</a></li>
+                    <li><a href="{% url 'create_purchase_return' %}">Create Purchase Return</a></li>
+                    <li><a href="{% url 'purchase_return_list' %}">Purchase Return List</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">money</span>
+
+                        <span class="link_name">Expenses</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Expenses</a></li>
+                    <li><a href="{% url 'create_expense' %}">Create Expense</a></li>
+                    <li><a href="{% url 'create_expense_category' %}">Create Expense Category</a></li>
+                    <li><a href="{% url 'expense_category_list' %}">Expense Category List</a></li>
+                    <li><a href="{% url 'expsense_list' %}">Expense List</a></li>
+                </ul>
+            </li>
+              <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">square_foot</span>
+
+                        <span class="link_name">Units</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Units</a></li>
+                    <li><a href="{% url 'create_unit' %}">Create Unit</a></li>
+                    <li><a href="{% url 'units_list' %}">Unit List</a></li>
+                </ul>
+            </li>
+              <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <span class="material-icons">query_stats</span>
+                        <span class="link_name">Reports</span>
+                    </a>
+                    <span class="material-icons arrow">expand_more</span>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Reports</a></li>
+                    <li><a href="{% url 'report_payment_sales' %}">Payments - Sales</a></li>
+                    <li><a href="{% url 'report_payment_sales_returns' %}">Payments - Sales Returns</a></li>
+                    <li><a href="{% url 'report_payment_purchases' %}">Payments - Purchases</a></li>
+                    <li><a href="{% url 'report_payment_purchases_returns' %}">Payments - Purchase Returns</a></li>
+                    <li><a href="{% url 'report_product_quantity_alert' %}">Product Quantity Alert/a></li>
+                    <li><a href="{% url 'report_top_selling_products' %}">Top Selling Products</a></li>
+                    <li><a href="{% url 'report_best_customers' %}">Best Customers</a></li>
+                </ul>
+            </li>
+
+            
+            <div class="footer">
+                <div class="ftr-logo">
+                    <img class="logo_image" src="{% static 'system/images/logo3.jpg' %}" alt="Logo">
+                </div>
+                <div class="ftr-txt">
+                    <h5>© 2022 Developed by KeepTrack - Inventory Management System.</h5>
+                    <h5>All rights reserved.</h5>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <!--End: Sidebar-->

@@ -1,0 +1,345 @@
+{% extends 'front_web/base.html' %} {%load static%} {% block content %}
+
+
+    <!--Start: Hero Section-->
+    <div id="hero-primary">
+        <div class="hero-heading">
+            <h1>More Effective Supply Chain Management</h1>
+            <button class="primary"> <a href="#"> Learn More </a> </button>
+        </div>
+        <div class="color-overlay"></div>
+    </div>
+    <!--End: Hero Section-->
+
+    <!--Start: Main Section 1 - Short About-->
+    <section id="short-about">
+        <div class="text">
+            <h4>At <span> KeepTrack </span>, we provide a unified view of your assets inventory</h4>
+            <hr class="long-line">
+            <p>What lies at the heart of every growing product-based ecommerce business? It’s not your online presence
+                or a killer social media strategy — but your inventory management system.</p>
+            <p>As you grow your ecommerce business by moving into new sales channels and different markets, your order
+                volumes will increase, but so will the complexity of fulfilling orders from multiple sales channels.</p>
+            <p>Implementing an inventory management system to automate the hard work for you.</p>
+            <button class="primary"> <a href="#">Read More </a></button>
+        </div>
+        <div class="image">
+            <img src="{% static 'front_web/images/Homepage/sec_1.jpg' %}" alt="Yellow Storage" />
+        </div>
+    </section>
+    <!--End: Main Section 1 - Short About-->
+
+    <!--Start: Main Section 2 - Services Provided-->
+    <section id="services" class="section-p1">
+        <div class="text">
+            <h4>Services</h4>
+            <h6><span>We Provide</span></h6>
+            <hr class="long-line">
+            <p>KeepTrack takes your data and quickly turns it into actionable alerts that show where, when, and why
+                items
+                are not available.</p>
+            <p>This enables you to make smarter decisions, minimize out-of-stocks, grow customer satisfaction, and boost
+                sales.</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="{% static 'front_web/images/Homepage/service1.png' %}" alt="service1">
+                <h6>Automated Inventory</h6>
+                <button class="secondary"> <a href="#">Read More</a> </button>
+            </div>
+            <div class="card">
+                <img src="{% static 'front_web/images/Homepage/service2.jpg' %}" alt="service2">
+                <h6>Balanced Supply&Demand</h6>
+                <button class="secondary"> <a href="#">Read More</a> </button>
+            </div>
+            <div class="card">
+                <img src="{% static 'front_web/images/Homepage/service3.jpg' %}" alt="service3">
+                <h6>Inventory Tracking</h6>
+                <button class="secondary"> <a href="#">Read More </a></button>
+            </div>
+            <div class="card">
+                <img src="{% static 'front_web/images/Homepage/service4.jpg' %}" alt="service4">
+                <h6>Automatized Reports</h6>
+                <button class="secondary"> <a href="#">Read More</a> </button>
+            </div>
+        </div>
+    </section>
+    <!--End: Main Section 2 - Services Provided-->
+
+    <!--Start: Main Section 3 - Demo-->
+    <section id="demo" class="section-p1">
+        <div class="demo-content">
+            <div class="image">
+                <img src="{% static 'front_web/images/Homepage/banner1.png' %}" alt="Demo Tour">
+            </div>
+            <div class="text">
+                <h4> <strong> You can`t improve what you dont track. </strong> </h4>
+                <br>
+                <h4><span>Take a Demo Tour of Our System.</span></h4>
+                <a href="index_demo.html">
+                    <ion-icon name="play"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--End: Main Section 3 - Demo-->
+
+    <!--Start: Main Section 4 - Strenghts-->
+    <section id="strengths">
+        <div class="image">
+            <img src="{% static 'front_web/images/Homepage/strength.jpg' %}" alt="Strengths">
+        </div>
+        <div class="text">
+            <h4>Our <span>Strength</span></h4>
+            <hr class="short-line">
+            <div class="list-box">
+                <p>Our objective is to Reduce our clients overall Logistics Cost and Increase their Customer Order
+                    Servicability</p>
+                <p class="list"> <i class="true fa fa-check"></i> Donec cursus magna quis aliquam malesuada.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Curabitur eleifend dui ut est dapibus, eu tempus elit
+                    feugiat.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Mauris vel metus ac ante consectetur varius non nec
+                    velit.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Sed malesuada augue sed dui tincidunt luctus.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Aenean dapibus arcu et convallis sollicitudin.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Duis efficitur ex id hendrerit maximus.</p>
+            </div>
+        </div>
+    </section>
+    <!--End: Main Section 4 - Strenghts-->
+
+    <!--Start: Main Section 5 - Benefits-->
+    <section id="benefits">
+        <div class="text">
+            <h4>Customer <span>Benefits</span></h4>
+            <hr class="short-line">
+            <div class="boxes">
+                <div class="box">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <h6>PROFESSIONAL STAFF</h6>
+                    <p>Lorem ipsum dolor sit amet sit, consectetur adipiscing elit.</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-truck"></i>
+                    <h6>DISTRIBUTION&DELIVERY</h6>
+                    <p>Lorem ipsum dolor sit amet sit, consectetur adipiscing elit.</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-arrows-to-eye"></i>
+                    <h6>EFFECTIVE USE</h6>
+                    <p>Lorem ipsum dolor sit amet sit, consectetur adipiscing elit.</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-globe"></i>
+                    <h6>CONTINOUS FOCUS</h6>
+                    <p>Lorem ipsum dolor sit amet sit, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="{% static 'front_web/images/Homepage/benefits.jpg' %}" alt="Benefits">
+        </div>
+    </section>
+    <!--End: Main Section 5 - Benefits-->
+
+    <!--Start: Main Section 6 - People Section-->
+    <section id="people">
+        <div class="text">
+            <h4>What People Say</h4>
+            <h4><span>About Us</span></h4>
+            <hr class="short-line">
+            <p>It is a long established fact that a reader will be distracted by the readable </p>
+            <p>content of a page when looking at its layout.</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people1.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Johen Kothari</h6>
+                        </a>
+                        <p>Data Analyst</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>A great aspect of this course is the student mentors. These people are always there to help,
+                        support, and motivate the student to complete modules...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people2.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Johen Doe</h6>
+                        </a>
+                        <p>Vice President</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>A great aspect of this course is the student mentors. These people are always there to help,
+                        support, and motivate the student to complete modules...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people3.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Anshu Srivastav</h6>
+                        </a>
+                        <p>Research Assistant</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>Group case studies really give a sense of teamwork, as it happens in regular classroom studies.
+                        It teaches us coordination and right attitude as a team...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people4.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Mical Doe</h6>
+                        </a>
+                        <p>Analyst</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>AIt doesn’t matter what your previous working background is, as everything is taught from the
+                        basics. Group case studies really give a sense of...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people5.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Paton don</h6>
+                        </a>
+                        <p>Data Analyst</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>They will prepare you how to face Data Science job interviews along with this upGrad will also
+                        provide mock interviews and mock MCQ tests to check...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people6.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Johen Doe</h6>
+                        </a>
+                        <p>Samsung</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>Many of the basic concepts are being taught to build good intuition of Machine Learning models.
+                        Most of the basic math required for developing an intuition...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people7.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Moriss Kothari</h6>
+                        </a>
+                        <p>Software Engineer</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>You will be notified of any interview opportunities in ML and they will share your profile with
+                        the recruiters. This really helps to kick start your...</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-image">
+                        <img src="{% static 'front_web/images/Homepage/people8.jpg' %}" alt="People">
+                    </div>
+                    <div class="card-name">
+                        <a href="#">
+                            <h6>Johens Kothari</h6>
+                        </a>
+                        <p>Software Engineer</p>
+                    </div>
+                </div>
+                <div class="review-text">
+                    <p>The course justifies every penny charged and is an investment that reaps benefits once we enter
+                        the market after course completion.</p>
+                </div>
+                <a href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon> Detailed Review
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--End: Main Section 6 - People Section-->
+
+    <!--Start: Banner-->
+    <section id="banner-img" class="section-p1">
+        <div class="circle">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <h4>5428</h4>
+            <h6>JOBS POSTED</h6>
+        </div>
+        <div class="circle">
+            <i class="fa-solid fa-pencil"></i>
+            <h4>120</h4>
+            <h6>JOBS FILLED</h6>
+        </div>
+        <div class="circle">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h4>7485</h4>
+            <h6>COMPANIES</h6>
+        </div>
+        <div class="circle">
+            <i class="fa-solid fa-user-plus"></i>
+            <h4>100</h4>
+            <h6>MEMBERS</h6>
+        </div>
+    </section>
+    <!--End: Banner-->
+
+
+{% endblock content %}

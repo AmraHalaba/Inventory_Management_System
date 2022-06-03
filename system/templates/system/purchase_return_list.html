@@ -1,0 +1,198 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Header -->
+        <div class="header-top">
+            <span class="material-icons bars">menu</span>
+            <span class="text">Purchase Return List</span>
+            <div class="header-top-options">
+                <nav>
+                    <ul>
+                        <li><a class="head-pos" href="#">POS</a></li>
+                        <li><a class="bell-svg" href="{% url 'report_product_quantity_alert' %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+                                    viewBox="0 0 448 512">
+                                    <path
+                                        d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" />
+                                </svg>
+                            </a></li>
+                    </ul>
+                </nav>
+                <img class="user-img" src="{{ request.user.profile_image.url }}" alt=""></a>
+            </div>
+        </div>
+        <!--End: Header -->
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <div class="title">
+                <h5>Purchase Return List <span>Purchase Returns | Purchase Return List</span> </h5>
+                <hr>
+            </div>
+            <!--End: Individual Page Title-->
+
+            <!-- Start: Table Options - Table1-->
+            <div class="table-options">
+                <div class="head-searchbox">
+                    <span class="material-icons search">search</span>
+                    <input type="text" class="header-search" placeholder="Search this table">
+                </div>
+                <div class="buttons">
+                    <button class="pdf"> <a href="#"> </a> <i class="fa-solid fa-file-pdf"></i> PDF </button>
+                    <button class="exc"> <a href="#"> </a> <i class="fa-solid fa-table"></i> Excel </button>
+                    <a href="{% url 'create_purchase_return' %}"> <button class="crt"> <i class="fa-solid fa-circle-plus"></i> Create </button> </a>
+                </div>
+            </div>
+            <!-- End: Table Options - Table1-->
+
+            <!--Start: Table - Table3-->
+            <table class="table-3">
+                <tr>
+                    <th>Date</th>
+                    <th>Reference</th>
+                    <th>Supplier</th>
+                    <th>Warehouse</th>
+                    <th>Status</th>
+                    <th>Grand Total</th>
+                    <th>Paid</th>
+                    <th>Due</th>
+                    <th>Payment Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>2022-25-04</td>
+                    <td>PR-1118</td>
+                    <td>Supplier 1</td>
+                    <td>Warehouse 1</td>
+                    <td> <button class="btn-rcv">Received</button> </td>
+                    <td>1,449.00</td>
+                    <td>1,499.00</td>
+                    <td>0</td>
+                    <td> <button class="btn-paid">Paid</button></td>
+                    <td>
+                        <div class="icons">
+                            <div class="icon view" data-tooltip="Details">
+                                <a class="btn-view" href="#"> <span>
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon print" data-tooltip="Print Invoice"> 
+                                <a class="btn-view" href="#"> <span>
+                                        <ion-icon name="print-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon edit" data-tooltip="Edit">
+                                <a class="btn-edit" href="#"> <span>
+                                        <ion-icon name="pencil-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon delete" data-tooltip="Delete">
+                                <a class="btn-delete" href="#"> <span>
+                                        <ion-icon name="close-circle-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2022-25-04</td>
+                    <td>PR-1119</td>
+                    <td>Supplier 2</td>
+                    <td>Warehouse 1</td>
+                    <td> <button class="btn-pending">Pending</button> </td>
+                    <td>2,000.00</td>
+                    <td>0</td>
+                    <td>2,000.00</td>
+                    <td> <button class="btn-unpaid">Unpaid</button></td>
+                    <td>
+                        <div class="icons">
+                            <div class="icon view" data-tooltip="Details">
+                                <a class="btn-view" href="#"> <span>
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon print" data-tooltip="Print Invoice">
+                                <a class="btn-view" href="#"> <span>
+                                        <ion-icon name="print-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon edit" data-tooltip="Edit">
+                                <a class="btn-edit" href="#"> <span>
+                                        <ion-icon name="pencil-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon delete" data-tooltip="Delete">
+                                <a class="btn-delete" href="#"> <span>
+                                        <ion-icon name="close-circle-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2022-25-04</td>
+                    <td>PR-1117</td>
+                    <td>Supplier 3</td>
+                    <td>Warehouse 2</td>
+                    <td> <button class="btn-pending">Pending</button> </td>
+                    <td>600.00</td>
+                    <td>200.00</td>
+                    <td>400.00</td>
+                    <td> <button class="btn-partial">Partial</button></td>
+                    <td>
+                        <div class="icons">
+                            <div class="icon view" data-tooltip="Details">
+                                <a class="btn-view" href="#"> <span>
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon print" data-tooltip="Print Invoice">
+                                <a class="btn-view" href="#"> <span>
+                                        <ion-icon name="print-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon edit" data-tooltip="Edit">
+                                <a class="btn-edit" href="#"> <span>
+                                        <ion-icon name="pencil-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                            <div class="icon delete" data-tooltip="Delete">
+                                <a class="btn-delete" href="#"> <span>
+                                        <ion-icon name="close-circle-outline"></ion-icon>
+                                    </span> </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!--End: Table - Table1-->
+
+            <!--Start: Selection of Row Numbers in Table - Table1-->
+            <div class="sel-no-rows">
+                <p class="sel-rows">Rows per page</p>
+                <select>
+                    <option value=""> 10 </option>
+                    <option value=""> 20 </option>
+                    <option value=""> 30 </option>
+                    <option value=""> 40 </option>
+                    <option value=""> 50 </option>
+                    <option value=""> All </option>
+                </select>
+            </div>
+            <!--End: Selection of Row Numbers in Table - Table1-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+{% endblock content %}

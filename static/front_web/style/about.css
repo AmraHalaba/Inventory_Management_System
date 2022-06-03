@@ -1,0 +1,404 @@
+/*START: ABOUT PAGE*/
+/*start: First Main Section*/
+#introduction { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: var(--c12);
+    padding: 40px 0 40px 0;
+}
+  
+#introduction .text {
+    width: 50%;
+    height: 100%;
+    padding: 0 40px 0 40px;
+}
+  
+#introduction .image {
+    width: 50%;
+    height: auto;
+    padding: 0px 0 0 40px;
+}
+  
+#introduction .image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+  
+#introduction h4 {
+    font-weight: var(--fw3);
+    font-size: 30px;
+    line-height: var(--lh2);
+    color: var(--c1);
+    padding-right: 40px;
+}  
+
+#introduction h4 span {
+    color: var(--c4);
+    font-weight: var(--fw4);
+}
+  
+#introduction hr {
+    margin-right: 40px;
+}
+  
+#introduction p {
+    font-size: 16px;
+    padding: 10px 40px 0 0;
+}
+  
+#introduction button {
+    margin-right: 40px;
+    margin-top: 48px;
+}
+/*end: First Main Section*/
+
+/*start: Second Main Section*/
+#story {
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    width: 100%;
+    background-color: var(--c8);
+    padding: 0 40px;
+}
+  
+#story .image {
+    width: 50%;
+    height: 30rem;
+    padding: 0;
+    margin: 0;
+    background-image: url(../images/AboutPage/content2.jpg);
+}
+  
+/* #story .image img {
+    width: 100%;
+    height: 60rem;
+    object-fit: cover;
+} */
+  
+#story .text {
+    width: 50%;
+}
+  
+#story .text h4 {
+    padding-left: 40px;
+    line-height: 35px;
+    font-size: var(--fs3);
+    font-weight: 500;
+}
+  
+#story hr {
+    margin-left: 40px;
+}
+  
+#story .text p {
+    padding-left: 40px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: var(--fs9);
+}
+  
+#story .text .list {
+    font-size: var(--fs11);
+    padding: 8px;
+}
+  
+#story .true {
+    width: 25px;
+    height: 25px;
+    background-color: var(--c7);
+    color: var(--c4);
+    text-align: center;
+    border-radius: 70% 30% 30% 70%/60% 40% 60% 40%;
+    padding-top: 5px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+  
+#story .fa-check {
+    font-size: var(--fs10);
+    cursor: pointer;
+    transition: 0.2 ease;
+    margin-left: 30px;
+    background-color: var(--c7);
+    color: var(--c4);
+}
+  
+#story .fa-check:hover {
+    background-color: var(--c5);
+    color: var(--c2);
+    box-shadow: 0 0 11px rgba(86, 196, 12, 0.2);
+}
+/*end: Second Main Section*/
+
+/*start: Third Main Section*/
+#mpv-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: var(--c8);
+}
+
+/* #mpv-cards :nth-child(1),
+#mpv-cards :nth-child(2) {
+    margin-right: 40px;
+} */
+
+#mpv-cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: var(--br2);
+    width: 30%;
+    background: var(--c2);
+    transition: all 0.5s ease;
+}
+
+#mpv-cards .card ion-icon {
+    font-size: 50px;
+    color: var(--c4);
+    text-align: center;
+}
+
+#mpv-cards .card h6 {
+    padding-top: 20px;
+    color: var(--c3);
+    font-size: var(--f15);
+    font-weight: 700;
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+#mpv-cards .card p {
+    font-size: var(--fs10);
+    text-align: center;
+    color: #7e8299;
+    line-height: 20px;
+}
+
+#mpv-cards .card:hover h6 {
+    color: var(--c4);
+}
+
+#mpv-cards .card:hover {
+    box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); 
+}
+/*end: Third Main Section*/
+
+/*start: Fourth Main Section*/
+#slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 40px 0 40px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#slider .container {
+    display: flex;
+}
+
+#slider h4 {
+    font-size: var(--fs3);
+    line-height: 35px;
+    font-weight: 500;
+}
+
+#slider hr {
+    margin-left: 520px;
+    margin-top: 10px;
+}
+
+#slider .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#slider .content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300%;
+    transition: all 1s ease;
+}
+
+#two:checked ~ .content {
+    margin-left: -100%;
+}
+
+#three:checked ~ .content {
+    margin-left: -200%;
+}
+
+#slider .content .card {
+    width: calc(100%/3 -10px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+#slider .card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider .card .image {
+    height: 50px;
+    width: 50px;
+}
+
+#slider .card .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+#slider .card .card-content .name-place h6 {
+    font-size: var(--fs10);
+    text-align: center;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+#slider .card .card-content .name-place p {
+    font-size: var(--fs12);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+} 
+
+#slider .rating ion-icon {
+    color: var(--c4);
+}
+
+
+#slider .review p {
+    font-size: var(--fs12);
+    text-align: center;
+    padding: 10px 200px 10px 200px;
+    margin-top: 10px;
+}
+
+#slider .sld-button {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+#slider .sld-button label {
+    height: 15px;
+    width: 15px;
+    background: var(--c4);
+    margin: 0 4px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+#slider .sld-button label.active {
+    width: 15px;
+}
+
+#one:checked ~ .sld-button label.one {
+    width: 15px;
+}
+
+#two:checked ~ .sld-button label.two {
+    width: 15px;
+}
+
+#three:checked ~ .sld-button label.three {
+    width: 15px;
+}
+
+#one:checked ~ .sld-button label.two {
+    width: 15px;
+}
+
+#one:checked ~ .sld-button label.three {
+    width: 15px;
+}
+
+#two:checked ~ .sld-button label.one {
+    width: 15px;
+}
+
+#two:checked ~ .sld-button label.three {
+    width: 15px;
+}
+
+#three:checked ~ .sld-button label.one {
+    width: 15px;
+}
+
+#three:checked ~ .sld-button label.two {
+    width: 15px;
+}
+
+#slider input[type="radio"] {
+    display: none;
+}
+/*end: Fourth Main Section*/
+
+/*Start: Banner*/
+#banner-img2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-image: url(../images/AboutPage/bg-3.jpg);
+    background-size: cover;
+    background-position: top 25% right 0%;
+    padding: 40px;
+}
+
+#banner-img2 h4, 
+#banner-img2 h6,
+#banner-img2 p {
+    color: var(--c2);
+    text-align: center;
+}
+
+#banner-img2 h4 {
+    font-size: var(--fs3);
+}
+
+#banner-img2 p {
+    color: var(--c2);
+    text-align: center;
+    font-size: var(--fs12);
+    line-height: 20px;
+    padding: 40px 200px 40px 200px;
+}
+
+#banner-img2 h4 {
+    font-weight: var(--fw2);
+}
+
+#banner-img2 h6 {
+    font-size: var(--fs10);
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+#banner-img2 button {
+    width: 8.5rem;
+}
+
+/*End: Banner*/
+
+/*END: ABOUT PAGE*/
+
+/*----------------------------------------------------------------------------------------------------------------*/

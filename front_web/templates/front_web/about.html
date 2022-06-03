@@ -1,0 +1,179 @@
+{% extends 'front_web/base.html' %} {%load static%} {% block content %}   
+   
+
+   <!--Start: Hero Section-->
+    <div id="hero-secondary">
+        <div class="hero-heading">
+            <h2>About us</h2>
+            <h5>
+                <ion-icon name="home"></ion-icon> / About us
+            </h5>
+        </div>
+        <div class="color-overlay"></div>
+    </div>
+    <!--End: Hero Section-->
+
+    <!--Start: Main Section 1 - Introduction-->
+    <section id="introduction">
+        <div class="image">
+            <img src="{% static 'front_web/images/AboutPage/introduction.jpg' %}" alt="Yellow Storage">
+        </div>
+        <div class="text">
+            <h4>At <span> KeepTrack </span>, we provide a unique solution for warehousing space for business and
+                consumers
+            </h4>
+            <hr class="long-line">
+            <p>What lies at the heart of every growing product-based ecommerce business? It’s not your online presence
+                or a killer social media strategy — but your inventory management system.</p>
+            <p>Implementing an inventory management system to automate the hard work for you.</p>
+            <button class="primary"> <a href="#">Read More </a></button>
+        </div>
+    </section>
+    <!--End: Main Section 1 - Introduction-->
+
+    <!--Start: Main Section 2 - Story-->
+    <section id="story">
+        <div class="image">
+
+        </div>
+        <div class="text">
+            <h4>Short Story About KeepTrack Startup</h4>
+            <div class="list-box">
+                <p>Our objective is to Reduce our clients overall Logistics Cost and Increase their Customer Order
+                    Servicability</p>
+                <p class="list"> <i class="true fa fa-check"></i> Donec cursus magna quis aliquam malesuada.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Curabitur eleifend dui ut est dapibus, eu tempus elit
+                    feugiat.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Mauris vel metus ac ante consectetur varius non nec
+                    velit.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Sed malesuada augue sed dui tincidunt luctus.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Aenean dapibus arcu et convallis sollicitudin.</p>
+                <p class="list"> <i class="true fa fa-check"></i> Duis efficitur ex id hendrerit maximus.</p>
+            </div>
+        </div>
+    </section>
+    <!--End: Main Section 2 - Story-->
+
+    <!--Start: Main Section 3 - MPV Cards-->
+    <section id="mpv-cards">
+        <div class="card">
+            <ion-icon name="person"></ion-icon>
+            <h6>Our Mission</h6>
+            <p>Create an account and access your saved settings on any device.</p>
+        </div>
+        <div class="card">
+            <ion-icon name="search"></ion-icon>
+            <h6>Our Planning</h6>
+            <p>Don`t just find. Be found. Put your CV in front of great employers.</p>
+        </div>
+        <div class="card">
+            <ion-icon name="tv"></ion-icon>
+            <h6>Our Vision</h6>
+            <p>The best for your career. Choose Job from 1000s of companies.</p>
+        </div>
+    </section>
+    <!--End: Main Section 3 - MPV Cards-->
+
+    <!--Start: Main Section 4 - Slider-->
+    <section id="slider">
+        <div class="container">
+            <h4>What Our Clients Say</h4>
+            <hr class="long-line">
+            <input type="radio" name="dot" id="one">
+            <input type="radio" name="dot" id="two">
+            <input type="radio" name="dot" id="three">
+            <div class="content">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="{% static 'front_web/images/AboutPage/client-1.jpg' %}" alt="">
+                        </div>
+                        <div class="name-place">
+                            <h6>Peter Doe</h6>
+                            <p>Miami</p>
+                        </div>
+                        <div class="rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                        </div>
+                        <div class="review">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos magnam velit, sint corporis
+                                non eaque eligendi iure aliquid natus autem dolores, repellat, minus temporibus
+                                quisquam. Quia distinctio vero et deleniti?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="{% static 'front_web/images/AboutPage/client-2.jpg' %}" alt="">
+                        </div>
+                        <div class="name-place">
+                            <h6>Johen Packer</h6>
+                            <p>Oslo</p>
+                        </div>
+                        <div class="rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                        </div>
+                        <div class="review">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos magnam velit, sint corporis
+                                non eaque eligendi iure aliquid natus autem dolores, repellat, minus temporibus
+                                quisquam. Quia distinctio vero et deleniti?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="{% static 'front_web/images/AboutPage/client-3.jpg' %}" alt="">
+                        </div>
+                        <div class="name-place">
+                            <h6>Mica Packer</h6>
+                            <p>Toronto</p>
+                        </div>
+                        <div class="rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                        </div>
+                        <div class="review">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos magnam velit, sint corporis
+                                non eaque eligendi iure aliquid natus autem dolores, repellat, minus temporibus
+                                quisquam. Quia distinctio vero et deleniti?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sld-button">
+                <label for="one" class="active"></label>
+                <label for="two"></label>
+                <label for="three"></label>
+            </div>
+        </div>
+    </section>
+    <!--End: Main Section 4 - Slider-->
+
+    <!--Start: Banner-->
+    <section id="banner-img2" class="section-p1">
+        <h4>Why You Choose Us</h4>
+        <h6>High Quality Health Care Services</h6>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+            an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <button class="primary"> <a href="#"> Contact Now! </a></button>
+    </section>
+    <!--End: Banner-->
+
+
+{% endblock content %}
