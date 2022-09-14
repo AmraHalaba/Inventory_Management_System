@@ -1,0 +1,31 @@
+{% load static %}
+
+<nav>
+			<span class="material-symbols-outlined toggle-sidebar">menu</span>
+
+			<span class="divider"></span>
+
+			<a href="{% url 'report_product_quantity_alert' %}" class="nav-link">
+				<span class="material-symbols-outlined icon">notifications</span>
+
+					{% comment %} {% for product in all_products %}
+                        {% if product.total_quantity <= product.stock_alert %}
+                          <span class="badge">!</span>  
+                        {% endif %}
+                    {% endfor %}  {% endcomment %}
+
+				
+			</a>
+			<div class="profile">
+				<img src="{{ request.user.userprofile.profile_pic.url }}">
+				<ul class="profile-link">
+					<li class="username"><h1>Hello, {{ request.user }}</h1></li>
+
+					<li> <a href="{% url 'user_page' %}"> <span class="material-symbols-outlined icon">account_circle</span> Profile </a> </li>
+
+					<li> <a href="{% url 'user_settings' %}"> <span class="material-symbols-outlined icon">settings</span> Settings </a> </li>
+
+					<li> <a href="{% url 'logout_user' %}"> <span class="material-symbols-outlined icon">logout</span> Logout </a> </li>
+				</ul>
+			</div>
+		</nav>

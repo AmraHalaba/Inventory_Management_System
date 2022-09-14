@@ -1,0 +1,74 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Create Category</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Create Category</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Category Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table2-->
+            <div class="table-2 create-product">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                                            
+                        {% if form.errors %}
+                            <div class="django-errors">
+                                <ul>
+                                    <li>
+                                        <p class="text"> <span class="material-symbols-outlined icon">error_circle_rounded</span> There is an error! </p>
+                                        <p> {{form.errors }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        <div class="columns">
+                            <div class="col-left">
+                                <div>
+                                    <label for="Category Code">Code *</label><br>
+                                    {{ form.code }}
+                                </div>                                                
+                            </div>
+                            <div class="col-right">
+                                <div>
+                                    <label for="category-name">Name *</label><br>
+                                    {{ form.name }}
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="rows">
+                            <label for="product-note">Note</label><br>
+                            {{ form.description }}
+                        </div>
+                        <input type="submit" value="Submit" class="btn-submit">
+                </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--End: Create Product Form - Table2-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+
+{% endblock content %}

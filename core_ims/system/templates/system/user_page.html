@@ -1,0 +1,95 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Profile Page</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Profile Page</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> User Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+             <!-- Start: User Profile Box-->
+            <div class="profile-card">
+                 {% if messages %}
+                        <div class="success-msg">
+                            <ul class="messages">
+                                {% for message in messages %}
+                                        <li>
+                                            {{ message }}
+                                        </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                <div class="card-image">
+                    <img src="{% static 'system/images/profile_background.png' %}">
+                </div>
+                <div class="profile-image" style="">
+                    <img src="{{ request.user.userprofile.profile_pic.url }}">
+                </div>
+                <div class="card-content">
+                    <div class="username">
+                        <h1> {{ user.username }} </h1>
+
+                    </div>
+                    <div class="info">
+
+                                <div class="col left">
+                                    <div class="data">
+                                        <h6>NAME</h6>
+                                        <p>{{ request.user.first_name }}</p>
+                                    </div>
+                                    <div class="data">
+                                        <h6>SURNAME</h6>
+                                        <p>{{ request.user.last_name }}</p>
+                                    </div>
+                                    <div class="data">
+                                        <h6>E-MAIL</h6>
+                                        <p>{{ request.user.email }}</p>
+                                    </div>
+                                </div>
+                                <div class="col right">
+                                    <div class="data">
+                                        <h6>PHONE</h6>
+                                        <p>{{ request.user.userprofile.phone }}</p>
+                                    </div>
+                                    <div class="data">
+                                        <h6>ROLE</h6>
+                                        <p>{{ request.user.userprofile.role }}</p>
+                                    </div>
+                                    <div class="data">
+                                        <h6>SHORT BIO</h6>
+                                        <p>{{ request.user.userprofile.bio }}</p>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class="btn-edit-profile">
+                    <a href="{% url 'user_settings' %}" >Edit Profile</a>
+                </div>
+            </div>
+            <!-- End: User Profile Box-->
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

@@ -1,0 +1,172 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Create Product</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Create Product</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Product Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table2-->
+            <div class="table-2 create-product">
+                <form method="POST" enctype="multipart/form-data" action="">
+                {% csrf_token %}
+                    
+                    {% if form.errors %}
+                        <div class="django-errors">
+                            <ul>
+                                <li>
+                                    <p class="text"> <span class="material-symbols-outlined icon">error_circle_rounded</span> There is an error! </p>
+                                    <p> {{form.errors }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    <div class="columns">
+                        <div class="col-left">
+                            <div>
+                                <label for="product-code">Code *</label><br>
+                                {{ form.code }}
+                            </div>
+                            <div>
+                                <label for="product-name">Name *</label><br>
+                                {{ form.name }}
+                            </div>
+                            <div>
+                            <label for="product-category">Category *</label><br>
+                                <!--<select name="Choose Category" id="" required>
+                                    <option value="lorem" disabled selected hidden>Choose Category</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>-->
+                                {{ form.category }}
+                            </div>
+                            <div>
+                                <label for="product-brand">Brand</label><br>
+                                <!--<select name="Choose Brand" id="">
+                                    <option value="lorem" disabled selected hidden>Choose Brand</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>-->
+                                {{ form.brand }}
+                            </div>
+                            {% comment %} <div>
+                                <label for="base-cost">Base Cost</label><br>
+                                {{ form.product_cost_base  }}
+                            </div> {% endcomment %}
+                            {% comment %} <div>
+                                <label for="transport-cost">Transport Cost</label><br>
+                                {{ form.product_cost_transport }}
+                            </div> {% endcomment %}
+                            {% comment %} <div>
+                                <label for="cost-customs">Customs</label><br>
+                                {{ form.product_cost_customs }}
+                            </div> {% endcomment %}
+                            {% comment %} <div>
+                                <label for="other-costs">Other Costs *</label><br>
+                                {{ form.product_cost_other }}
+                            </div> {% endcomment %}
+                            <div>
+                                <label for="product-unit">Product Unit *</label><br>
+                                <!--<select name="Choose Product Unit" id="" required>
+                                    <option value="lorem" disabled selected hidden>Choose Product Unit</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>-->
+                                {{ form.product_unit }}
+                            </div>                             
+                        </div>
+
+                        <div class="col-right">
+                            <div>
+                                <label for="product-quantity">Quantity *</label><br>
+                                {{ form.total_quantity }}
+                            </div>  
+                            <div>
+                                <label for="product-stock-alert">Stock Alert</label><br>
+                                {{ form.stock_alert }}
+                            </div>
+                            <div>
+                                <label for="product-price">Product Price *</label><br>
+                                {{ form.product_price }}
+                            </div>
+                            <div>
+                                <label for="product-cost">Cost *</label><br>
+                                {{ form.product_cost }}
+                            </div> 
+                            
+                            <div>
+                                <label for="status">Status *</label><br>
+                                {{ form.status }}
+                            </div>
+                            {% comment %} <div>
+                                <label for="product-purch-unit">Purchase Unit * </label><br>
+                                <!--<select name="Choose Purchase Unit" id="" required>
+                                    <option value="lorem" disabled selected hidden>Choose Purchase Unit</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>-->
+                                {{ form.purchase_unit }}
+                            </div>                          {% endcomment %}
+                            {% comment %} <div class="product-image">
+                                {{ form.product_image }} {% endcomment %}
+                                {% comment %} <label for="file">
+                                    <span class="material-icons">add_photo_alternate</span> &nbsp;
+                                    Upload Product Image
+                                </label> {% endcomment %}
+                            {% comment %} </div>                                                   {% endcomment %}
+                            {% comment %} <div>
+                                <label for="product-sales-unit">Sales Unit *</label><br>
+                                <!--<select name="Choose Sales Unit" id="" required>
+                                    <option value="lorem" disabled selected hidden>Choose Sales Unit</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>-->
+                                {{ form.sales_unit }}
+                            </div> {% endcomment %}
+                            <div >
+                                <label for="image">Image </label><br>
+                                {{ form.product_image }}
+                            </div> 
+                        </div>   
+                    </div>
+                    <div class="rows">
+                        <label for="product-note">Note</label><br>
+                        {{ form.description }}
+                    </div>
+                    <input type="submit" value="Submit" class="btn-submit">
+                </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--End: Create Product Form - Table2-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

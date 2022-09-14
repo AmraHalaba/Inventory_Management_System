@@ -1,0 +1,91 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Create Unit</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Create Unit</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Unit Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table2-->
+            <div class="table-2 create-product">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                                        
+                    {% if form.errors %}
+                        <div class="django-errors">
+                            <ul>
+                                <li>
+                                    <p class="text"> <span class="material-symbols-outlined icon">error_circle_rounded</span> There is an error! </p>
+                                    <p> {{form.errors }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    <div class="columns">
+                        <div class="col-left">
+                            <div>
+                                <label for="unit-code">Code *</label><br>
+                                {{ form.code }}
+                            </div> 
+                            <div>
+                                <label for="unit-name">Name *</label><br>
+                                {{ form.name }}
+                            </div> 
+                            {% comment %} <div>
+                                <label for="base-unit">Base Unit *</label><br>
+                                {{ form.base_unit }}
+                            </div>     {% endcomment %}
+                            {% comment %} <div>
+                                <label for="operator">Unit Operator *</label><br>
+                                {{ form.unit_operator }}
+                            </div>                                               {% endcomment %}
+                        </div>
+
+                        <div class="col-right">
+                            <div>
+                                <label for="abbreviation">Abbreviation *</label><br>
+                                {{ form.unit_abbreviation }}
+                            </div>
+                             {% comment %}<div>
+                                <label for="operation value">Unit Operation Value *</label><br>
+                                {{ form.unit_operation_value }}
+                            </div> {% endcomment %}
+                        </div>    
+                    </div>
+                    <div class="rows">
+                        <label for="product-note">Note</label><br>
+                        {{ form.description }}
+                    </div>
+                    <input type="submit" value="Submit" class="btn-submit">
+                </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--End: Create Product Form - Table2-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+
+{% endblock content %}

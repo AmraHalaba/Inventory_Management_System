@@ -1,0 +1,110 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Product Details</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Product Details</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Product Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!-- Start: Product Details Box-->
+            {% for detail in product_details %}
+                <div class="profile-card other">
+                    <div class="product-header">
+                        <div class="product-image" style="">
+                            {% if detail.product_image %}
+                                <img class="product-image" src="{{ detail.product_image.url }}">
+                                {% else %}
+                                    <img class="product-image" src="{% static 'system/images/product_default.png' %}">
+                            {% endif %} 
+                        </div>
+                        <div class="title">
+                            <h1> {{ detail.name }} </h1>
+                        </div>   
+                    </div>
+                    <div class="card-content">
+                        
+                        <div class="info">
+
+                            <div class="col left">
+                                <div class="data">
+                                    <h6>CODE</h6>
+                                    <p>{{ detail.code }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>CATEGORY</h6>
+                                    <p>{{ detail.category }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>BRAND</h6>
+                                    <p>{{ detail.brand }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>UNIT</h6>
+                                    <p>{{ detail.product_unit }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>QTY ON STOCK</h6>
+                                    <p>{{ detail.total_quantity }}</p>
+                                </div>
+                            </div>
+                            <div class="col right">
+                                <div class="data">
+                                    <h6>STOCK ALERT</h6>
+                                    <p>{{ detail.stock_alert }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>PRICE</h6>
+                                    <p>{{ detail.product_price }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>COST</h6>
+                                    <p>{{ detail.product_cost }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>STATUS</h6>
+                                    <p>{{ detail.status }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>CREATED AT</h6>
+                                    <p>{{ detail.date_created }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if detail.description %}
+                            <div class="description">
+                                <p class="note">NOTE </p>
+                                <div class="description-text">
+                                    <p> {{ detail.description }} </p>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- End: Product Details Box-->
+
+            
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

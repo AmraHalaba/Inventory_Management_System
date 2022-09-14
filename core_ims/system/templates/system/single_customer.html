@@ -1,0 +1,97 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Customer Details</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Customer Details</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Customer Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!-- Start: Product Details Box-->
+            {% for detail in customer_details %}
+                <div class="profile-card other">
+                    <div class="product-header no-image">
+                        <div class="title no-image">
+                            <h1> {{ detail.name }} </h1>
+                        </div>   
+                    </div>
+                    <div class="card-content">
+                        
+                        <div class="info">
+                            <div class="col left">
+                                <div class="data">
+                                    <h6>CODE</h6>
+                                    <p>{{ detail.code }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>COUNTRY</h6>
+                                    <p>{{ detail.country }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>CITY</h6>
+                                    <p>{{ detail.city }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>ADDRESS</h6>
+                                    <p>{{ detail.address }}</p>
+                                </div>
+                            </div>
+                            <div class="col right">
+                                <div class="data">
+                                    <h6>PHONE</h6>
+                                    <p>{{ detail.phone }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>EMAIL</h6>
+                                    <p>{{ detail.email }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>STATUS</h6>
+                                    <p>{{ detail.status }}</p>
+                                </div>
+                                <div class="data">
+                                    <h6>CREATED AT</h6>
+                                    <p>{{ detail.date_created }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if detail.description %}
+                            <div class="description">
+                                <p class="note">NOTE </p>
+                                <div class="description-text">
+                                    <p> {{ detail.description }} </p>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- End: Product Details Box-->
+
+            
+        </div>
+        <!--End: Main Page Contents -->
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

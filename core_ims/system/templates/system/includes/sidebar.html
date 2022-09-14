@@ -1,0 +1,102 @@
+{% load static %}
+
+<!--START: Sidebar-->
+	<section id="sidebar">
+
+		<!--Start: Logo-->
+		<div class="brand">
+			<div class="hdr-logo">
+				<a href="#" class="brand"> <img src="{% static 'system/images/logo3.jpg' %}"> </a>		
+                
+			</div>
+			<div class="name">
+				<p>KeepTrack</p>
+			</div>
+		</div>
+		
+		<!--End: Logo-->
+
+		<!--Start: Navbar-->
+		<ul class="side-menu">
+		<hr class="brand-decoration">
+			<li> <a href="{% url 'dashboard' %}"> <span class="material-symbols-outlined icon">home</span> Dashboard </a> </li>
+			<li> <a href="{% url 'stock' %}"> <span class="material-symbols-outlined icon">inventory</span> Stock </a> </li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">qr_code</span> Products <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					<li> <a href="{% url 'product_list' %}">All Products</a> </li>
+					<li> <a href="{% url 'create_product' %}">Create Product</a> </li>
+				</ul>
+			</li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">arrow_forward</span> Customers <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					<li> <a href="{% url 'customer_list' %}">All Customers</a> </li>
+					<li> <a href="{% url 'create_customer' %}">Create Customer</a> </li>
+				</ul>
+			</li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">arrow_back</span> Suppliers <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					<li> <a href="{% url 'supplier_list' %}">All Suppliers</a> </li>
+					<li> <a href="{% url 'create_supplier' %}">Create Supplier</a> </li>
+				</ul>
+			</li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">category</span> Categories <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					<li> <a href="{% url 'category_list' %}">All Categories</a> </li>
+					<li> <a href="{% url 'create_category' %}">Create Category</a> </li>
+				</ul>
+			</li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">android</span> Brands <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					<li> <a href="{% url 'brand_list' %}">All Brands</a> </li>
+					<li> <a href="{% url 'create_brand' %}">Create Brand</a> </li>				
+				</ul>
+			</li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">square_foot</span> Units <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					<li> <a href="{% url 'units_list' %}">All Units</a> </li>
+					<li> <a href="{% url 'create_unit' %}">Create Unit</a> </li>
+				</ul>
+			</li>
+
+			<li> 
+				<a href="#"> <span class="material-symbols-outlined icon">group</span> Users <span class="material-symbols-outlined icon icon-drop">chevron_right</span> </a> 
+				<ul class="side-dropdown">
+					{% comment %} <li> <a href="{% url 'user_page' %}">User Profile</a> </li>
+					<li> <a href="{% url 'user_settings' %}">User Settings</a> </li> {% endcomment %}
+					<li> <a href="{% url 'users_list' %}">All Users</a> </li>
+				</ul>
+			</li>
+
+			{% comment %} <li> <a href="#"> <span class="material-symbols-outlined icon">lock</span> Admin </a> </li> {% endcomment %}
+		</ul>
+		<!--End: Navbar-->
+
+		<!--Start: AddOns-->
+		<div class="ads">
+			<div class="wrapper">
+				<!--Start: Footer-->
+				<div class="ftr-logo">
+                    <img class="logo_image" src="{% static 'system/images/logo3.jpg' %}" alt="Logo">
+                </div>
+                <div class="ftr-txt">
+                    <h5>© 2022 Developed by KeepTrack - Inventory Management System.</h5>
+                    <h5>All rights reserved.</h5>
+                </div>
+                <!--End: Footer-->
+			</div>
+		</div>
+		<!--End: AddOns-->
+	</section>
+	<!--END: Sidebar-->

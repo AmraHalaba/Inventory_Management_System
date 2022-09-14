@@ -1,0 +1,96 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Update Profile</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Update Profile</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> User Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table2-->
+            <div class="table-2 create-product edit-profile">
+                <form  method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                                        
+                    {% if form.errors %}
+                        <div class="django-errors">
+                            {{ form.errors }}
+                        </div>
+                    {% endif %}
+
+                    
+                    
+                    
+                    <div class="columns">
+                        <div class="col-left">
+                            <div>
+                                <label for="username">Username *</label><br>
+                                {{ user_form.username }}
+                            </div>
+                            <div>
+                                <label for="first-name">First Name</label><br>
+                                {{ user_form.first_name }}
+                            </div>
+                            <div>
+                                <label for="phone">Phone</label><br>
+                                {{ profile_form.phone }}
+                            </div>
+                            <div>
+                                <label for="short-bio">Short Bio</label><br>
+                                {{ profile_form.bio }} 
+                            </div>
+                            {% comment %} <div class="brand-image">
+                                {{ profile_form.profile_pic }}
+                                    <label for="file">
+                                        <span class="material-icons">add_photo_alternate</span> &nbsp;
+                                    Change Profile Photo
+                                </label>
+                            </div>                 {% endcomment %}
+                            <div class="pr-image">
+                                {{ profile_form.profile_pic }}
+                            </div>
+                        </div>
+
+                        <div class="col-right">
+                            <div>
+                                <label for="email">Email</label><br>
+                                {{ user_form.email }}
+                            </div>
+                            <div>
+                                <label for="last_name">Surname</label><br>
+                                {{ user_form.last_name }}
+                            </div>
+                            <div>
+                                <label for="role">Role</label><br>
+                                {{ profile_form.role }}
+                            </div>  
+                        </div>    
+                    </div> 
+                    <input type="submit" value="Submit" class="btn-submit edit-profile">
+                </form>
+            </div>
+        </div>
+            <!--End: Create Product Form - Table2-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+
+{% endblock content %}

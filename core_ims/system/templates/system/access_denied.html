@@ -1,0 +1,38 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+ <!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!-- Start: Denied Access -->
+                    <div class="create-first denied">
+                        <div class="create-first-txt-btn">
+                            <div class="text denied">
+                                <h3>You are not allowed to access this page</h3>
+                            </div>
+                            <div class="btn"> 
+                            </div>
+                        </div>
+                        <div class="create-first-img"> 
+                            <img class="create-first-entry" src="{% static 'system/images/access_denied.png' %}" alt="Create first entry">
+                        </div>
+                    </div> 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+            <!--End: Denied Access -->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+{% endblock content %}

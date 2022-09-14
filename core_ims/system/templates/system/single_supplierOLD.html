@@ -1,0 +1,89 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Supplier Details</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Supplier Details</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Supplier Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!-- Start: Product Details Box-->
+            {% for detail in supplier_details %}
+                <div class="profile-card other">
+                    <div class="product-header  no-image">
+                        <div class="title  no-image">
+                            <h1> {{ detail.name }} </h1>
+                        </div>   
+                    </div>
+                    <div class="card-content">
+                        
+                        <div class="info">
+                            <table class="user-profile-table">
+                                <tr>
+                                    <th>Code: </th>
+                                    <td> {{ detail.code }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Category: </th>
+                                    <td> {{ detail.phone }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Brand: </th>
+                                    <td> {{ detail.email }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Price: </th>
+                                    <td> {{ detail.country }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Product Unit: </th>
+                                    <td> {{ detail.city }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Quantity on Stock: </th>
+                                    <td> {{ detail.address }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Satus: </th>
+                                    <td> {{ detail.status }} </td>
+                                </tr>
+                                <tr>
+                                    <th>Created at: </th>
+                                    <td> {{ detail.date_created }} </td>
+                                </tr>
+                            </table>
+                            <div class="description">
+                                <p class="note">Note: </p>
+                                <div class="description-text">
+                                    <p> {{ detail.description  }} </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- End: Product Details Box-->
+
+            
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

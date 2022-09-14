@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+
+    <!--Link for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--Link for FontAwesome Icons-->
+    <script src="https://kit.fontawesome.com/87c876a5cb.js" crossorigin="anonymous"></script>
+
+    <!--Custom CSS link-->
+    <link rel="stylesheet" href="{% static 'system/style/reglog.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <form method="POST" action="" autocomplete="off" class="sign-in">
+                        {% csrf_token %}
+                        
+                        <div class="logo">
+                            <img src="{% static 'system/images/logo3.jpg' %}" alt="KeepTrack">
+                            <h3>KeepTrack</h3>
+                        </div>
+                        <div class="heading">
+                            <div class="line1"><h2>Get Started</h2></div>
+                            <div class="line2"><h6>Already have an account?</h6></div>
+                            <div class="line3"><a href="{% url 'login_page' %}" class="toggle">Sign in</a></div>
+                        </div>
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <!--<label for="first_name">First Name</label> <br>-->
+                                {{ form.first_name }}                   
+                            </div>
+                            <div class="input-wrap">
+                                <!--<label for="last_name">Last Name</label> <br>-->
+                                {{ form.last_name }}                   
+                            </div>
+                            <div class="input-wrap">
+                                <!--<label for="username">Username</label> <br>-->
+                                {{ form.username }}                   
+                            </div>
+                            <div class="input-wrap">
+                                <!--<label for="email">Email</label> <br>-->
+                                {{ form.email }}                      
+                            </div>
+                            <div class="input-wrap">
+                                <!--<label for="pass">Password</label> <br>-->
+                                {{ form.password1 }}      
+                            </div>
+                            <div class="input-wrap">
+                                <!--<label for="pass">Confirm Password</label> <br>-->
+                                {{ form.password2 }}                      
+                            </div>
+                            <input type="submit" value="Sign Up" class="sign-btn">
+                        </div>
+                    </form>
+
+                        {{ form.errors }}
+                        
+                </div>
+
+                
+
+                <div class="carousel">
+                    <div class="div images-wrapper">
+                        <img src="{% static 'system/images/1.png' %}" class="image img-1 show" alt="Demo">
+                        <img src="{% static 'system/images/2.png' %}" class="image img-2" alt="Demo">
+                        <img src="{% static 'system/images/3.png' %}" class="image img-3" alt="Demo">
+                    </div>
+                    <div class="text-slider">
+                        <div class="text-wrapper">
+                            <div class="text-group">
+                                <h2>Complete Control.</h2>
+                                <h2>Instant Clarity.</h2>
+                                <h2>Real-time. Flexible.</h2>
+                            </div>
+                        </div>
+                        <div class="bullets">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!--Custom JS link-->
+    <script src="{% static 'system/js/reglog.js' %}"></script>
+
+    <script>
+    // Query all input fields
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder='First Name';
+    form_fields[2].placeholder='Last Name';
+    form_fields[3].placeholder='Username';
+    form_fields[4].placeholder='E-mail address';
+    form_fields[5].placeholder='Password';
+    form_fields[6].placeholder='Password Confirmation';
+
+    for (var field in form_fields) {
+        form_fields[field].className += ' input-wrap '
+    }
+    </script>
+
+    <!--IonIcons Link-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

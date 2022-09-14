@@ -1,0 +1,435 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeepTrack Inventory Management System</title>
+
+  <!-- FAVICON ICON LINK -->
+  <link rel="icon" type="image/x-icon" href="{% static 'front_web//images/Index/favicon.png' %}">
+
+  <!-- CUSTOM CSS LINKS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/media_queries.css' %}">
+
+
+  <!-- LINK FOR GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- LINK FOR GOOGLE ICONS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <!--Start: Header-->
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo"> <img src="{% static 'front_web/images/Index/logo3.jpg' %}" alt="KeepTrack Logo" /> </a>
+
+            <button class="menu-toggle-btn" data-nav-toggle-btn><ion-icon name="menu-outline"></ion-icon></button>
+
+            <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="#hero" class="navbar-link">Home</a></li>
+                <li><a href="#services" class="navbar-link">Services</a></li>
+                <li><a href="#features" class="navbar-link">Features</a></li>
+                <li><a href="#prices" class="navbar-link">Pricing</a></li>
+                <li><a href="#contact" class="navbar-link">Contact</a></li>
+            </ul>
+
+            <div class="header-search">
+
+                <form class="search-bar" action="{% url 'search_bar' %}" method="POST" name="search-query">
+                {% csrf_token %}
+                  <input type="search" name="search-query" placeholder="Search services...">
+                  <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                </form>
+
+            </div>
+            </nav>
+        </div>
+    </header>
+    <!--End: Header-->
+
+    <!--Start: Django ContactFormSent Message NOT WORKING FIX IF I HAVE TIME-->
+    {% comment %} {% if message_name and message_email and message_text %}
+    <br>
+    <br>
+    <center style="background-color:red">
+      <h5> Thanks {{message_name}} for reaching out! </h5>
+      <p> We received your e-mail and will get back to you in the shortest notice. </p>
+    </center>
+    <br>
+    <br> 
+    {% endif %} {% endcomment %}
+    <!--Start: Django ContactFormSent Message-->
+
+    
+
+    <!--Start: Sidebar Social Icons-->
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/" class="facebook"> <ion-icon name="logo-facebook"></ion-icon> </a>
+        <a href="https://twitter.com/" class="twitter"> <ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="https://www.linkedin.com/" class="linkedin"> <ion-icon name="logo-linkedin"></ion-icon> </a>
+        <a href="https://www.youtube.com/watch?v=DZhHSR4_9B4&ab_channel=TheFinanceStoryteller" class="youtube"> <ion-icon name="logo-youtube"></ion-icon> </a>
+    </div>
+    <!--End: Sidebar Social Icons-->
+
+    <!-- Start: Main Content-->
+    <main>
+      <article>
+
+        <!-- Start: Hero-->
+        <section class="hero" id="hero">
+          <div class="container">
+              <div class="hero-content">
+                <h1 class="h1 hero-title">KeepTrack Inventory Management System</h1>
+                <hr class="long-line">
+                <p class="hero-text">
+                  A unified view of your assets` inventory.
+                </p>
+                <p class="form-text">
+                KeepTrack`s end-to-end inventory planning software helps you take control of your supply chain by automating, streamlining, and simplifying complex inventory optimization processes to drive 99+% availability with less stock. 
+                <br><br></p>
+                {% comment %} <form action="" class="hero-form">
+                  <input type="email" name="email" required placeholder="Enter Your Email" class="email-field">
+                  <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form> {% endcomment %}   
+                <div class="btn-box">               
+                  <a href="http://127.0.0.1:8000/system/register_page/"> <button class="btn btn-third">View Demo</button> </a>
+                </div>              
+              </div>
+              <figure class="hero-banner">
+                <img src="{% static 'front_web/images/Index/hero-banner.png' %}" alt="Hero Banner" />
+              </figure>
+            </div>
+        </section>
+        <!-- End: Hero -->
+
+        <!-- Start: Services -->
+        <section>
+          <section class="about" id="services">
+            <div class="container">
+              <div class="about-content">
+                <div class="about-icon">
+                  <ion-icon name="school-outline"></ion-icon>
+                </div>
+                <h2 class="h2 about-title">Why Choose Us ?</h2>
+                <hr class="long-line secondary">
+                <p class="about-text">
+                  KeepTrack takes your data and quickly turns it into actionable alerts that show where, when, and why items are not available. <br>
+                  Align your end-to-end supply chain planning with a shared view of omnichannel customer demand that delivers advanced insights into your predicted daily and monthly inventory requirements, allowing you to respond quickly and cost-effectively to disruptions and changes in demand or supply.
+                </p>
+                <button class="btn btn-outline">Learn More</button>
+              </div>
+              <ul class="about-list">
+
+                {% for service in services %}
+                  <li>
+                    <a href="{% url 'single_service' service.id %}">
+                      <div class="about-card">
+                        <div class="card-icon">
+                          <ion-icon name="book-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title"> {{service.title}} </h3>
+                        <p class="card-text"> {{ service.text }} </p>
+                      </div>
+                    </a>
+                  </li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </section>  
+        </section>
+        <!-- End: Services -->
+
+        <!-- Start: Features -->
+        <section class="features" id="features">
+            <div class="container">
+              <h2 class="h2 section-title">Customer Benefits</h2>
+              <hr class="long-line secondary">
+              <p class="section-text">
+                Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis eligendi
+                cumque.
+              </p>
+              
+              <div class="features-wrapper">
+                <div class="features-content">
+                  <p class="features-content-subtitle">
+                    <ion-icon name="sparkles"></ion-icon>
+                    <span>PROFESSIONAL STAFF WITH CONTINOUS FOCUS</span>
+                  </p>
+                  <h3 class="features-content-title">
+                    Our <strong>objective</strong> is to <strong>reduce</strong> client`s overall <strong>logistic costs</strong> and to <strong>increase </strong> theirs <strong>Customer Order Servicabilit</strong>
+                  </h3>
+                  <p class="features-content-text">
+                    Temporibus autem quibusdam et aut officiis debitis aut rerum a necessitatibus saepe eveniet ut et
+                    voluptates repudiandae
+                    sint molestiae non recusandae itaque.
+                  </p>
+                  <ul class="features-list">
+                    <li class="features-list-item">
+                      <ion-icon name="extension-puzzle-outline"></ion-icon>
+                      <p>Donec pede justo fringilla vel nec.</p>
+                    </li>
+                    <li class="features-list-item">
+                      <ion-icon name="infinite-outline"></ion-icon>
+                      <p>Cras ultricies mi eu turpis hendrerit fringilla.</p>
+                    </li>
+                  </ul>
+                  <div class="btn-group">
+                    <button class="btn btn-primary">Read More</button>
+                    <!--<button class="btn btn-secondary">Contact Us</button>-->
+                  </div>
+                </div>
+                <figure class="features-banner">
+                  <img src="{% static 'front_web/images/Index/benefit1.png' %}" alt="Benefits" />
+                </figure>
+              </div>
+
+              <div class="features-wrapper">
+                <figure class="features-banner">
+                  <img src="{% static 'front_web/images/Index/benefit2.png' %}" alt="Benefits" />
+                </figure>
+                <div class="features-content">
+                  <p class="features-content-subtitle">
+                    <ion-icon name="sparkles"></ion-icon>
+                    <span>EFFECTIVE USE</span>
+                  </p>
+                  <h3 class="features-content-title">
+                    Implementing an inventory management system to automate the hard work for you.
+                    We implement an inventory management system to <strong>automate the hard work for you</strong> and you stay focused on <strong>your growth.</strong>
+                  </h3>
+                  <p class="features-content-text">
+                    Temporibus autem quibusdam et aut officiis debitis aut rerum a necessitatibus saepe eveniet ut et
+                    voluptates repudiandae
+                    sint molestiae non recusandae itaque.
+                  </p>
+                  <ul class="features-list">
+                    <li class="features-list-item">
+                      <ion-icon name="extension-puzzle-outline"></ion-icon>
+                      <p>Donec pede justo fringilla vel nec.</p>
+                    </li>
+                    <li class="features-list-item">
+                      <ion-icon name="infinite-outline"></ion-icon>
+                      <p>Cras ultricies mi eu turpis hendrerit fringilla.</p>
+                    </li>
+                  </ul>
+                  <div class="btn-group">
+                    <button class="btn btn-primary">Read More</button>
+                    <!--<button class="btn btn-secondary">Contact Us</button>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+         </section>
+        <!-- End: Features -->
+
+        <!-- Start: Prices -->
+        <section class="prices" id="prices">
+            <div class="container">
+              <h2 class="h2 section-title">Pricing Plans</h2>
+              <hr class="long-line secondary">
+              <p class="section-text">
+                Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis eligendi
+                cumque.
+              </p>
+              <ul class="prices-list">
+
+              {% for plan in pricing_plans %}
+                <li>
+                  <div class="prices-card">
+                    <div class="card-top">
+                      <h3 class="prices-title"> {{plan.title}} </h3>
+                      <p class="prices-text"> {{ plan.description }} </p>
+                      <div class="prices-amount">
+                          <h5>${{plan.price}} / month</h5>
+                      </div>
+                      <a href="#" class="prices-link-btn"> <span>Get It Now</span> <ion-icon name="chevron-forward-outline"></ion-icon> </a>  <span class="badge"> Coming soon </span>
+                    </div>
+                    <div class="description first">
+                      <ul>
+
+                      {% comment %} {% for item in pricing_properties %}
+                          <li><span class="material-symbols-outlined">done</span> {{item.property}} </li>
+                      {% endfor %} {% endcomment %}
+
+                      {% for item in plan.properties.all %}
+                          <li><span class="material-symbols-outlined">done</span> {{item.property}} </li>
+                      {% endfor %}
+                      
+                      </ul>
+                    </div>
+                  </div>
+                </li> 
+              {% endfor %}
+
+              </ul>
+            </div>
+        </section>
+        <!-- End: Prices -->
+
+        <!-- Start: ContactUs -->
+        <section class="contact" id="contact">
+            <div class="container">
+              <h2 class="h2 section-title">Contact Us</h2>
+              <hr class="long-line secondary">
+              <p class="section-text">
+                Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis eligendi
+                cumque.
+              </p>
+              {% for msg in messages %}
+                <div class="message-box">                              
+                  <p> {{msg}} </p>               
+                </div>
+              {% endfor %}
+              <div class="contact-wrapper">           
+
+              <form method="POST" class="contact-form" >
+                {% csrf_token %}
+                  <div class="wrapper-flex">
+                    <div class="input-wrapper">
+                      <label for="name">Name*</label>
+                      
+                      <input type="text" name="message-name" id="name" required placeholder="Enter Your Name" class="input-field">
+                    </div>
+                    <div class="input-wrapper">
+                      <label for="emai">Email*</label>
+
+                      <input type="text" name="message-email" id="email" required placeholder="Enter Your Email"
+                        class="input-field">
+                    </div>
+                  </div>
+
+                  <label for="message">Message*</label>
+                  <textarea name="message-text" id="message" required placeholder="Type Your Message"
+                    class="input-field"></textarea>
+
+                  <button type="submit" class="btn btn-primary"><span>Send Message</span></button>
+              </form>
+
+                <ul class="contact-list">
+                  <li>
+                    <a href="mailto:support@website.com" class="contact-link">
+                      <ion-icon name="mail-outline"></ion-icon>
+                      <span>support@keeptrack.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="contact-link">
+                      <ion-icon name="globe-outline"></ion-icon>
+                      <span>www.keeptrack.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="tel:+0011234567890" class="contact-link">
+                      <ion-icon name="call-outline"></ion-icon>
+                      <span>+387 61 000 000</span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="contact-link">
+                      <ion-icon name="time-outline"></ion-icon>
+                      <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#" class="contact-link">
+                      <ion-icon name="location-outline"></ion-icon>
+                      <address> Sarajevska bb, 71000 Sarajevo, B&H</address>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="map-box">
+                      <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.0382798601054!2d18.384143914820267!3d43.85503524737479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c991e2f52b45%3A0x4677ab221ff73164!2sSarajevo%20Tower!5e0!3m2!1shr!2sba!4v1650034729197!5m2!1shr!2sba"
+                          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      </div>
+              </div>
+        </section>
+        <!-- End: ContactUs -->
+      </article>  
+    </main>
+    <!-- End: Main Content-->
+     
+    <!--Start: Footer-->
+    <footer>
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-brand">
+                <a href="#" class="logo"> <img src="{% static 'front_web/images/Index/logo3.jpg' %}" alt="KeepTrack Logo" /> </a>
+              <p class="footer-text">
+                Cras ultricies mi eu turpis sit hendrerit fringilla vestibulum ante ipsum primis in faucibus ultrices
+                posuere cubilia.
+              </p>
+              <ul class="social-list">
+                <li><a href="https://www.facebook.com/" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li><a href="https://twitter.com/" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li><a href="https://www.linkedin.com/" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a></li>
+                <li><a href="https://www.youtube.com/watch?v=DZhHSR4_9B4&ab_channel=TheFinanceStoryteller" class="social-link">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                  </a></li>
+              </ul>
+            </div>
+            <div class="footer-link-box">
+              <ul class="footer-list">
+                <li><p class="footer-item-title">QUICK LINKS</p></li>
+                <li><a href="#" class="footer-link">About</a></li>
+                <li><a href="#" class="footer-link">FAQs</a></li>
+                <li><a href="#" class="footer-link">Contact</a></li>
+                <li><a href="#" class="footer-link">Listing</a></li>
+                <li><a href="#" class="footer-link">Membership</a></li>
+              </ul>
+              <ul class="footer-list">
+                <li><p class="footer-item-title">SERVICES</p></li>
+                <li><a href="#" class="footer-link">Customers</a></li>
+                <li><a href="#" class="footer-link">Suppliers</a></li>
+                <li><a href="#" class="footer-link">Products</a></li>
+                <li><a href="#" class="footer-link">Reports</a></li>
+              </ul>
+              <ul class="footer-list">
+                <li><p class="footer-item-title">SUPPORT</p></li>
+                <li><a href="#" class="footer-link">Get Started</a></li>
+                <li><a href="#" class="footer-link">Developers</a></li>
+                <li><a href="#" class="footer-link">Administration</a></li>
+                <li><a href="#" class="footer-link">Customer Service</a></li>
+                <li><a href="#" class="footer-link">Demo</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <p class="copyright">
+              &copy; 2022 <a href="">KeepTrack IMS</a>. All Right Reserved
+            </p>
+          </div>
+        </div>
+    </footer>
+    <!--End: Footer-->
+
+<!--Custom JS links-->
+<script type="text/javascript" src="{% static 'front_web/js/script.js' %}"></script>
+
+<!--LINK FOR ION ICONS-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>    

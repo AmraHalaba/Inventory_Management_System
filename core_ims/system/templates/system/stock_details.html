@@ -1,0 +1,72 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Quantity on Stock</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#"></a> Quantity on Stock </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Stock Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Table - Table1-->           
+            <table class="table-1">
+                <thead>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Total Qty</th>
+                    <th>Stock Alert</th>
+                    <th>Action</th>
+                </thead>
+
+                {% for product in stock_detail %}
+                    <tr>
+                        <td data-label="Product Code">{{ product.code }}</td>
+                        <td data-label="Product Name">{{ product.name }}</td>
+                        <td data-label="Total Qty">{{ product.total_quantity }}</td>
+                        <td data-label="Stock Alert Qty">{{ product.stock_alert  }}</td>
+                        <td data-label="Action">
+                            <div class="buttons buy-sell">
+                                <a href='{% url 'product_sales' product.id %}'><button class='btn-sell'>Sell</button></a>
+                                <a href='{% url 'product_purchase' product.id %}'><button class='btn-buy'>Buy</button></a>
+                            </div>
+                        </td>
+                        
+                        {% comment %} <td>
+                            <div class="icons">
+                                <div class="icon edit" data-tooltip="Add">
+                                    <a class="btn-edit" href="#"> <span>
+                                            <ion-icon name="add-circle-outline"></ion-icon>
+                                        </span> </a>
+                                </div>
+                                <div class="icon delete" data-tooltip="Subtract">
+                                    <a class="btn-delete" href="#"> <span>
+                                            <ion-icon name="remove-circle-outline"></ion-icon>
+                                        </span> </a>
+                                </div>
+                            </div>
+                        </td> {% endcomment %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+            <!--End: Table - Table1-->
+
+        </div>
+        <!--End: Main Page Contents-->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+{% endblock content %}v

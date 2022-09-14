@@ -1,0 +1,99 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Create Customer</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Create Customer</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Customer Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table2-->
+            <div class="table-2 create-product">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    
+                                        
+                    {% if form.errors %}
+                        <div class="django-errors">
+                            <ul>
+                                <li>
+                                    <p class="text"> <span class="material-symbols-outlined icon">error_circle_rounded</span> There is an error! </p>
+                                    <p> {{form.errors }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endif %}
+                    
+                    <div class="columns">
+                        <div class="col-left">
+                            <div>
+                                <label for="customer_code">Code *</label><br>
+                                {{ form.code }}
+                            </div>
+                            <div>
+                                <label for="customer-name">Name *</label><br>
+                                {{ form.name }}
+                            </div>
+                            <div>
+                                <label for="country">Country *</label><br>
+                                {{ form.country }}
+                            </div> 
+                            <div>
+                                <label for="city">City *</label><br>
+                                {{ form.city }}
+                            </div>  
+                        </div>
+                        <div class="col-right">
+                            <div>
+                                <label for="address">Address *</label><br>
+                                {{ form.address }}
+                            </div>      
+                            <div>
+                                <label for="phone">Phone *</label><br>
+                                {{ form.phone }}
+                            </div>         
+                            <div>
+                                <label for="email">Email *</label><br>
+                                {{ form.email }}
+                            </div>  
+                            <div>
+                                <label for="status">Status *</label><br>
+                                {{ form.status }}
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="rows">
+                        <label for="product-note">Note</label><br>
+                        {{ form.description }}
+                    </div>
+                    <input type="submit" value="Submit" class="btn-submit">
+                </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--End: Create Product Form - Table2-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+
+{% endblock content %}

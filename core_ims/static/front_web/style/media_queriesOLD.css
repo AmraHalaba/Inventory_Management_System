@@ -1,0 +1,312 @@
+/*-----------------------------------*\
+  START: MEDIA QUERIES ;
+\*-----------------------------------*/
+
+/*Start:  Responsive for devices larger than  400px*/
+
+@media (min-width: 400px) {
+
+    /*Hero Section*/
+    .hero-form {
+      position: relative;
+    }
+  
+    .email-field {
+      margin-bottom: 0px;
+      padding-right: 155px;
+    }
+  
+    .hero .btn-primary {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding-block: 12.5px;
+    }
+  
+    /*About Section*/
+    .about-content hr.long-line.secondary {
+      margin-left: 0px;
+    }
+  
+    .about-card .card-text {
+      max-width: 300px;
+      margin-inline: auto;
+    }
+  
+  }
+  
+  /*End:  Responsive for devices larger than  400px*/
+  
+  
+  /*Start:  Responsive for devices larger than  768px*/
+  @media (min-width: 768px) {
+  
+    /*Reusable Styles*/
+    .container {
+      max-width: 90%;
+      margin-inline: auto;
+    }
+  
+    .section-text {
+      max-width: 80%px;
+      margin-inline: auto;
+      margin-bottom: 80px;
+    }
+  
+    /*Sidebar Icons*/
+    .icon-bar {
+      visibility: visible;
+    }
+  
+    /*Hero Styles*/
+    .hero .container {
+      display: grid;
+      grid-template-columns: 4fr 5fr;
+      align-items: center;
+      gap: 60px;
+    }
+  
+    .hero-content {
+      margin-bottom: 0;
+    }
+  
+    .hero-content h1 {
+      font-size: 50px;
+    }
+  
+    /*About Section*/
+    .about .container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+  
+    .about-content {
+      margin-bottom: 0;
+      width: 40%;
+    }
+  
+    .about-list {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding-bottom: 50px;
+    }
+  
+    .about-list li:nth-child(odd) {
+      transform: translateY(50px);
+    }
+  
+    /*Features Section*/
+    .features-wrapper {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 90px;
+    }
+  
+    .features-wrapper:not(:last-child) {
+      margin-bottom: 100px;
+    }
+  
+    .features-wrapper:last-child .features-banner {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  
+    /*Pricing Section*/
+    .prices-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .prices.section-text {
+      margin-bottom: 50px;
+    }
+  
+  
+    /*Contact Section*/
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 80px;
+      align-items: center;
+    }
+  
+    .contact-form .wrapper-flex {
+      display: flex;
+      gap: 30px;
+    }
+  
+    .wrapper-flex .input-wrapper {
+      width: 50%;
+    }
+  
+    /*Search Page*/
+    main {
+      min-height: 90vh;
+      padding: 150px 0 100px 0;
+    }
+  
+    main .profile-card {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  
+    main .profile-card .product-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  
+    main .profile-card .card-image {
+      margin: auto 40px auto 0;
+      max-width: 30%;
+      border: 1px solid var(--c-6);
+      box-shadow: 0 3px 10px hsla(211, 49%, 69%, 0.5);
+      border-radius: 10px;
+    }
+  
+    main .profile-card .card-image img {
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      object-fit: cover;
+      background-color: var(--c-3);
+      border: 1px solid var(--c-6);
+      border-radius: 10px;
+    }
+  
+    main .profile-card .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid var(--c-4);
+      border-radius: 10px;
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    main .profile-card .title {
+      padding: 60px 0 20px 0;
+  
+    }
+  
+    main .profile-card .title h1 {
+      color: var(--c4);
+      font-size: 25px;
+      text-align: center;
+      font-weight: 700;
+    }
+  
+    main .profile-card .card-content .info-short,
+    main .profile-card .card-content .info-long {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    main .profile-card .card-content .info-short p {
+      text-align: center;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 600;
+      color: var(--c4);
+    }
+  
+    main .profile-card .card-content .info-long p {
+      text-align: left;
+      font-size: 15px;
+      line-height: 20px;
+      color: var(--c4);
+    }
+  
+  
+    /*Footer*/
+    .footer-link-box {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .footer-top .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 50px;
+    }
+  
+    .footer-brand {
+      margin-bottom: 0;
+      max-width: 300px;
+    }
+  
+    .footer-list {
+      width: 140px;
+    }
+  
+  }
+  
+  /*End:  Responsive for devices larger than  768px*/
+  
+  
+  /*Start:  Responsive for devices larger than  992px - only header --> wide*/
+  @media (min-width: 992px) {
+  
+    /*Header*/
+    .header {
+      overflow: visible;
+      padding: 10px 0;
+    }
+  
+    .header.active {
+      height: unset;
+    }
+  
+    .menu-toggle-btn {
+      display: none;
+    }
+  
+    .navbar {
+      position: static;
+      visibility: visible;
+      opacity: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 0;
+    }
+  
+    .navbar-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: max-content;
+      gap: 40px;
+      margin-inline: auto;
+    }
+  
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .navbar-link,
+    .header-action-link {
+      padding-block: 25px;
+    }
+  }
+  
+  
+  /*End:  Responsive for devices larger than  992px - only header --> wide*/
+  
+  /*-----------------------------------*\
+    END: MEDIA QUERIES ;
+  \*-----------------------------------*/

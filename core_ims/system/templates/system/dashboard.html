@@ -1,0 +1,134 @@
+{% extends 'system/includes/base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<!--Start: Individual Page Title-->
+<h1 class="title">Dashboard</h1>
+<ul class="breadcrumbs">
+	<li> <a href="#">Dashboard</a> </li>
+	<li class="divider"> | </li>
+	<li> <a href="#" class="active"></a> Dashboard </li>
+</ul>
+<hr>
+<!--End: Individual Page Title-->
+
+<!--Start: Info Cards Dashboard-->
+
+<div class="info-data">
+	<div class="card">
+		<div class="head">
+			<div>
+				<h2>{{ total_products }}</h2>
+				<p>Products</p>
+			</div>
+			<a href="{% url 'product_list' %}"> <span class="material-symbols-outlined icon">qr_code_2</span> </a> 
+		</div>
+	</div>
+	<div class="card">
+		<div class="head">
+			<div>
+				<h2>{{ total_customers }}</h2>
+				<p>Customers</p>
+			</div>
+			<a href="{% url 'customer_list' %}"> <span class="material-symbols-outlined icon">sell</span> </a> 
+		</div>
+	</div>
+	<div class="card">
+		<div class="head">
+			<div>
+				<h2>{{ total_suppliers }}</h2>
+				<p>Suppliers</p>
+			</div>
+			<a href="{% url 'supplier_list' %}"> <span class="material-symbols-outlined icon">shopping_cart</span> </a> 
+		</div>
+	</div>
+	{% comment %} <div class="card">
+		<div class="head">
+			<div>
+				<h2>2</h2>
+				<p>Sales</p>
+			</div>
+			<a href="#"> <span class="material-symbols-outlined icon">receipt_long</span> </a> 
+		</div>
+	</div> {% endcomment %}
+</div>
+<!--Start: Info Cards Dashboard-->
+
+<!--Start: Dashboard Table-->
+{% comment %} <div class="dash-table">
+	<h6> Top 5 Selling Products </h6> {% endcomment %}
+	<!--Start: Table - Table5 Dashboard-->
+
+	{% comment %} {% if products %}
+	<table class="table-5 dashboard">
+		<thead>
+			<th>Product</th>
+			<th>Quantity Sold</th>
+			<th>Price per Unit</th>
+			<th>Total Revenue</th>
+		</thead>
+
+		{% for product in top_selling_products %}
+		<tbody>
+			<tr>
+				<td data-label="Product"> {{product.name}} </td>
+				<td data-label="Quantity Sold"> {{ product.sales_quantity }} </td>
+				<td data-label="Price per Unit"> {{ product.product_price }} </td>
+				<td data-label="Total Revenue"> {{ product.total_revenue_per_product }} </td>			
+			</tr>
+		</tbody>
+		{% endfor %} 
+	{% else %}
+		<div class="no-data">
+			<h1> <span class="material-symbols-outlined icon">folder_open</span> No data in the System, yet ... <h1>
+		</div>
+	{% endif %}
+
+	</table> {% endcomment %}
+	<!--End: Table - Table5-->
+{% comment %} </div> {% endcomment %}
+<!--End: Dashboard Table-->
+
+<!--Start: Dashboard Table-->
+<div class="dash-table">
+	<h6> Quantity Alert </h6>
+	<!--Start: Table - Table5 Dashboard-->
+
+	{% if products %}
+	<table class="table-5 dashboard">
+		<thead>
+			<th>Code</th>
+			<th>Product</th>
+			{% comment %} <th>Warehouse</th> {% endcomment %}
+			<th>Quantity on Stock</th>
+			<th>Alert Quantity</th>
+		</thead>
+
+	{% for product in products %}
+		{% if product.total_quantity <= product.stock_alert %}
+		<tbody>
+			<tr>
+				<td data-label="Code">{{ product.code }}</td>
+				<td data-label="Product">{{ product.name }}</td>
+				<td data-label="Quantity on Stock">{{ product.total_quantity }}</td>
+				<td data-label="Alert Quantity"><span class="qnt-alert"> {{ product.stock_alert }} </span></td>                      
+			</tr>
+		</tbody>
+		{% endif %}
+	{% endfor %} 
+
+	{% else %}
+		<div class="no-data">
+			<h1> <span class="material-symbols-outlined icon">folder_open</span> No data in the System, yet ... <h1>
+		</div>
+	{% endif %}
+
+	</table>
+	<!--End: Table - Table5-->
+</div>
+<!--End: Dashboard Table-->
+
+{% endblock content %}
+

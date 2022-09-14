@@ -1,0 +1,405 @@
+/*-----------------------------------*\
+  /* START: MEDIA QUERIES*/
+/*-----------------------------------*/
+
+
+/*Responsive at 1140px breakpoint - for tables only - slider*/  
+/* @media screen and (max-width: 1140px) {
+    /*Tables - table-1/
+
+    .home-content .scrollable .table-1 {
+        border-collapse: collapse;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .home-content .scrollable .table-1 {
+        overflow-x: scroll;
+    }
+
+} */
+
+
+/*Responsive at 992px breakpoint*/
+@media screen and (max-width: 992px) {
+    /* main .title {
+        color: red;
+    } */
+
+    /*Content*/
+    #content {
+        position: relative;
+        width: calc(100% - 60px);
+        transition: all .3s ease;
+    }
+
+    /* nav .nav-link {
+        display: none;
+    } */
+
+    /*Table-1 : Product List, Brand List, Category List, Unit List, Customer List, Supplier List*/
+    .home-content table.table-1 {
+        width: 90%;
+        border-collapse: collapse;
+    }
+
+    /* .home-content table.table-1 tr:nth-child(even) {
+        background-color: #f2f6fb;
+    } */
+
+    .home-content table.table-1 th,
+    .home-content table.table-1 td {
+        padding: 12px 15px;
+    }
+
+    .home-content table.table-1 thead {
+        display: none;
+    }
+    
+    .home-content table.table-1,
+    .home-content table.table-1 tbody,
+    .home-content table.table-1 tr, 
+    .home-content table.table-1 td {
+        display: block;
+        width: 100%;
+    }
+
+    .home-content table.table-1 tr {
+        margin-bottom: 30px;
+        border-bottom: 1.5px solid var(--c6);
+        border-top: 1.5px solid var(--c6);
+        border-radius: 5px;
+    }
+
+    .home-content table.table-1 td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+        min-height: 35px; 
+        font-size: 13px;
+        color: var(--c4);
+    }
+
+    .home-content table.table-1 .icons {
+        margin-top: -12px;
+    }
+
+    .home-content table.table-1 td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 30%;
+        padding-left: 15px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: right;
+        color: var(--c4);
+    }
+
+    /* .home-content table.user-list td::before {
+        color: red;
+    } */
+    
+    .home-content table.table-1 td.image::before {
+        padding-top: 27px;
+    }
+
+    .home-content table.table-1 .icons {
+        margin: auto;
+    }
+
+    /*Table-1 Options Above : Search Bar, Buttons (Excel, PDF, Create) */
+    .home-content .header-search {
+        margin-top: 40px;
+    }
+
+    ::placeholder {
+        font-size: 10px;
+    }
+
+    .home-content .table-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content .table-options .buttons {
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+
+    /*Profile Cards : User Profile, Single Product, Single Customer, Single Supplier */
+    .home-content .profile-card.other .product-header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        margin: auto;
+    }
+    
+    .home-content .profile-card.other .product-header .title {
+        padding: 40px 0 0 0; 
+        margin: 0;
+    }
+
+    .home-content .profile-card.other .card-content {
+        padding: 0 20px;
+    }
+
+
+
+    /*Table-2 : Create Product, Supplier, Customer, Unit, Category, Brand, Sales, Purchase*/
+    .home-content .table-2 {
+        width: 90%;
+    }
+
+    .home-content .table-2 .columns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-content .table-2 .col-left div input,
+    .home-content .table-2 .col-right div input {
+        width: 190%;
+        font-size: 11px;
+    }
+
+    .home-content .table-2 .col-left div select,
+    .home-content .table-2 .col-right div select {
+        width: 190%;
+        font-size: 11px;
+    }
+
+
+    /*Table-5 - Quantity Alert Report*/
+    .home-content table.table-5 {
+        width: 90%;
+        border-collapse: collapse;
+    }
+
+    .home-content .table-5.report-alert th,
+    .home-content .table-5.report-alert td {
+        padding: 12px 15px;
+        text-align: center;
+    }
+
+    .home-content .table-5.report-alert thead {
+        display: none;
+    }
+
+    .home-content .table-5.report-alert,
+    .home-content .table-5.report-alert tbody,
+    .home-content .table-5.report-alert tr,
+    .home-content .table-5.report-alert td {
+        display: block;
+        width: 100%;
+    }
+
+    .home-content .table-5.report-alert tr {
+        margin-bottom: 30px;
+        border-bottom: 1.5px solid var(--c6);
+        border-top: 1.5px solid var(--c6);
+        border-radius: 5px;
+    }
+
+    .home-content .table-5.report-alert td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+        min-height: 35px; 
+        font-size: 13px;
+        color: var(--c4);
+    }
+
+    .home-content .table-5.report-alert td span {
+        margin-right: auto;
+    }
+
+    .home-content .table-5.report-alert td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 30%;
+        padding-left: 15px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: right;
+        color: var(--c4);
+    }
+
+
+
+
+
+    /*Table-5 - Dashboard Tables*/
+    .home-content .table-5.dashboard {
+        width: 90%;
+        border-collapse: collapse;
+    }
+
+    .home-content .table-5.dashboard th,
+    .home-content .table-5.dashboard td {
+        padding: 12px 15px;
+        text-align: center;
+    }
+
+    .home-content .table-5.dashboard thead {
+        display: none;
+    }
+
+    .home-content .table-5.dashboard,
+    .home-content .table-5.dashboard tbody,
+    .home-content .table-5.dashboard tr,
+    .home-content .table-5.dashboard td {
+        display: block;
+        width: 100%;
+    }
+
+    .home-content .table-5.dashboard tr {
+        margin-bottom: 30px;
+        border-bottom: 1.5px solid var(--c6);
+        border-top: 1.5px solid var(--c6);
+        border-radius: 5px;
+    }
+
+    .home-content .table-5.dashboard td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+        min-height: 35px; 
+        font-size: 13px;
+        color: var(--c4);
+    }
+
+    .home-content .table-5.dashboard td span {
+        margin-right: auto;
+    }
+
+    .home-content .table-5.dashboard td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 30%;
+        padding-left: 15px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: right;
+        color: var(--c4);
+    }
+
+
+
+
+    /*User Profile Page*/
+    .home-content .profile-card .card-content .user-profile-table .detail {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-height: 40px;
+        width: 100px;
+        flex-direction: column;
+      }
+
+
+    /*Delete Forms*/
+    .home-content .delete-form .btns {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-content .delete-form .buttons .btn-cancel-delete {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    
+
+
+    /*User Profile Page*/
+    .home-content .profile-card .card-content {
+        width: 90%;
+      }
+
+    .home-content .profile-card .card-content .info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+        flex-wrap: wrap;
+        font-size: 10px;
+        padding: 0 5px 0 10px;
+        width: 100%;
+    }
+
+    .home-content .profile-card .card-content .info .col.left h6,
+    .home-content .profile-card .card-content .info .col.right h6 {
+      padding: 10px 0 0 0;
+      color: var(--c4);
+      font-size: 12px;
+    }
+  
+    .home-content .profile-card .card-content .info .col.left p,
+    .home-content .profile-card .card-content .info .col.right p {
+      padding: 10px 0 0 0;
+      color: var(--c4);
+      font-size: 10px;
+    }
+/* 
+    .home-content .profile-card .card-content .info .col.left .data,
+    .home-content .profile-card .card-content .info .col.right .data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    } */
+
+
+    /*Single Product*/
+    .home-content .profile-card.other .product-header .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 50px 10px 20px 10px;
+    }
+
+    .home-content .profile-card .description p
+    .home-content .profile-card .description-text p {
+      color: var(--c4);
+      font-size: 12px;
+    }
+  
+    .home-content .profile-card .description-text {
+      color: var(--c4);
+      font-size: 12px;
+      padding: 0;
+      font-size: 10px;
+    }
+
+    .home-content .profile-card .description-text p {
+        font-size: 10px;
+    }
+
+
+
+
+
+    /*Access Denied*/   
+    .home-content .create-first.denied .create-first-txt-btn .text.denied h3 {
+        color: #747480; 
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+  /* END: MEDIA QUERIES*/
+/*-----------------------------------*/

@@ -1,0 +1,104 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Purchases from Supplier</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Purchases from Supplier</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Supplier Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            
+            <!-- Start: Customer/Supplier Name -->
+            <div class="customer-supplier-name">
+                <h1> {{ supplier_purchase.name }} </h1>
+            </div>
+            <!-- End: Customer/Supplier Name -->
+
+            {% comment %} {% if purchase_quantity > 0 %} {% endcomment %}
+            {% if page_items|length > 0 %} 
+                <!-- Start: Table Options - Table1-->
+                {% comment %} <div class="table-options report">
+                    <div class="header-search">
+                        <form class="search-bar" method="POST">
+                        {% csrf_token %}
+                            <input type="search" name="searched" placeholder="Search by product">
+                            <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                        </form>
+                    </div>
+                </div> {% endcomment %}
+                <!-- End: Table Options - Table1-->
+
+                <!--Start: Table - Table1-->
+                <table class="table-1 report">
+                    <thead>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Staff</th>
+                    </thead>
+                        {% for product in page_items %}
+                    <tbody>
+                        <tr>
+                            <td data-label="Product">{{product.name}}</td>
+                            <td data-label="Quantity">{{product.purchase_quantity}}</td>
+                            <td data-label="Staff">{{product.purchase_created_by}}</td>
+                        </tr> 
+                    </tbody>
+                        {% endfor %}
+                </table>
+                <!--End: Table - Table1-->
+            
+            {% else %}
+                <div class="create-first">
+                    <div class="create-first-txt-btn">
+                        <div class="text">
+                            <h3>No purchases have been made from {{ supplier_purchase.name }} yet</h3>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="create-first-img"> 
+                        <img class="create-first-entry" src="{% static 'system/images/empty_customer_supplier.png' %}" alt="Create first entry">
+                    </div>
+                </div> 
+        {% endif %}
+
+                <!--Start: Selection of Row Numbers in Table - Table1-->
+                <div class="sel-no-rows">
+                    {% if page_items.has_previous %}
+                        <div class="row-title"> <p> <a href="?page=1"> &laquo First </a> </p> </div>
+                        <div class="row-title"> <p> <a href="?page={{ page_items.previous_page_number }}"> Previous </a> </p> </div>
+                    {% endif %}
+
+                    <div class="current"> <p> Page {{ page_items.number }} of {{ page_items.paginator.num_pages }} </p> </div>
+
+                    {% if page_items.has_next %}
+                        <div class="row-title"> <p> <a href="?page={{ page_items.next_page_number }}"> Next </a> </p> </div>
+                        <div class="row-title"> <p> <a href="?page={{ page_items.paginator.num_pages }}"> Last &raquo </a> </p> </div>
+                    {% endif %} 
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <!--End: Selection of Row Numbers in Table - Table1-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+<!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

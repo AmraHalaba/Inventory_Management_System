@@ -1,0 +1,200 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeepTrack Inventory Management System</title>
+
+  <!-- FAVICON ICON LINK -->
+  <link rel="icon" type="image/x-icon" href="{% static 'front_web//images/Index/favicon.png' %}">
+
+  <!-- CUSTOM CSS LINKS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front_web//style/media_queries.css' %}">
+
+  <!-- LINK FOR GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- LINK FOR GOOGLE ICONS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <!--Start: Header-->
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo"> <img src="{% static 'front_web/images/Index/logo3.jpg' %}" alt="KeepTrack Logo" /> </a>
+
+            <button class="menu-toggle-btn" data-nav-toggle-btn><ion-icon name="menu-outline"></ion-icon></button>
+
+            <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="{% url 'index' %}" class="navbar-link">Home</a></li>
+                <li><a href="{% url 'index' %}" class="navbar-link">Services</a></li>
+                <li><a href="{% url 'index' %}" class="navbar-link">Features</a></li>
+                <li><a href="{% url 'index' %}" class="navbar-link">Pricing</a></li>
+                <li><a href="{% url 'index' %}" class="navbar-link">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+    <!--End: Header-->
+
+    <!--Start: Sidebar Social Icons-->
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/" class="facebook"> <ion-icon name="logo-facebook"></ion-icon> </a>
+        <a href="https://twitter.com/" class="twitter"> <ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="https://www.linkedin.com/" class="linkedin"> <ion-icon name="logo-linkedin"></ion-icon> </a>
+        <a href="https://www.youtube.com/watch?v=DZhHSR4_9B4&ab_channel=TheFinanceStoryteller" class="youtube"> <ion-icon name="logo-youtube"></ion-icon> </a>
+    </div>
+    <!--End: Sidebar Social Icons-->
+    
+    <main>
+        {% if search_query %}
+
+         {% for service in  services %}
+            <div class="profile-card other">
+                <div class="card-image">
+                    {% if service.service_photo %}
+                        <img class="product-image" src="{{  service.service_photo.url }}">
+                        {% else %}
+                            <img class="product-image" src="{% static 'front_web/images/Search/default_service_photo.png' %}">
+                    {% endif %} 
+                </div>
+                <div class="card-content">
+                    <div class="title">
+                        <h1> {{service.title}} </h1>
+                    </div>
+                    <div class="info">
+                        <div class="info-short">
+                            <p> {{service.short_description}} </p>
+                        </div>
+
+                        <div class="info-long">
+                          <div class="line">
+                            <p> {{ service.detailed_description_line1 }} </p>
+                          </div>    
+                          <div class="line">
+                            <p> {{ service.detailed_description_line2 }} </p>
+                          </div> 
+                          <div class="line">
+                            <p> {{ service.detailed_description_line3 }} </p>
+                          </div> 
+                          <div class="line">
+                            <p> {{ service.detailed_description_line4 }} </p>
+                          </div> 
+                          <div class="line">
+                            <p> {{ service.detailed_description_line5 }} </p>
+                          </div>                     
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        {% endfor %}
+
+        {% else %}
+            <div class="empty-search">
+                <div class="empty-text">
+                    <h5>Hey, You forgot to search for a service</h5>
+                </div>
+                <div class="empty-image">
+                    <img class="product-image" src="{% static 'front_web/images/Search/empty_search_query.png' %}">
+                </div>
+            </div>
+        {% endif %}
+
+        {% if search_query not in services %}
+          <div class="empty-search">
+              <div class="empty-text">
+                  <h5>Not found ... </h5>
+              </div>
+              <div class="empty-image">
+                  <img class="product-image" src="{% static 'front_web/images/Search/empty_search_query.png' %}">
+              </div>
+          </div>
+        {% endif %}
+
+    </main>
+
+    <!--Start: Footer-->
+    <footer>
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-brand">
+                <a href="#" class="logo"> <img src="{% static 'front_web/images/Index/logo3.jpg' %}" alt="KeepTrack Logo" /> </a>
+              <p class="footer-text">
+                Cras ultricies mi eu turpis sit hendrerit fringilla vestibulum ante ipsum primis in faucibus ultrices
+                posuere cubilia.
+              </p>
+              <ul class="social-list">
+                <li><a href="https://www.facebook.com/" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li><a href="https://twitter.com/" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li><a href="https://www.linkedin.com/" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a></li>
+                <li><a href="https://www.youtube.com/watch?v=DZhHSR4_9B4&ab_channel=TheFinanceStoryteller" class="social-link">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                  </a></li>
+              </ul>
+            </div>
+            <div class="footer-link-box">
+              <ul class="footer-list">
+                <li><p class="footer-item-title">QUICK LINKS</p></li>
+                <li><a href="#" class="footer-link">About</a></li>
+                <li><a href="#" class="footer-link">FAQs</a></li>
+                <li><a href="#" class="footer-link">Contact</a></li>
+                <li><a href="#" class="footer-link">Listing</a></li>
+                <li><a href="#" class="footer-link">Membership</a></li>
+              </ul>
+              <ul class="footer-list">
+                <li><p class="footer-item-title">SERVICES</p></li>
+                <li><a href="#" class="footer-link">Customers</a></li>
+                <li><a href="#" class="footer-link">Suppliers</a></li>
+                <li><a href="#" class="footer-link">Products</a></li>
+                <li><a href="#" class="footer-link">Reports</a></li>
+              </ul>
+              <ul class="footer-list">
+                <li><p class="footer-item-title">SUPPORT</p></li>
+                <li><a href="#" class="footer-link">Get Started</a></li>
+                <li><a href="#" class="footer-link">Developers</a></li>
+                <li><a href="#" class="footer-link">Administration</a></li>
+                <li><a href="#" class="footer-link">Customer Service</a></li>
+                <li><a href="#" class="footer-link">Demo</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <p class="copyright">
+              &copy; 2022 <a href="">KeepTrack IMS</a>. All Right Reserved
+            </p>
+          </div>
+        </div>
+    </footer>
+    <!--End: Footer-->
+
+<!--Custom JS links-->
+<script type="text/javascript" src="{% static 'front_web/js/script.js' %}"></script>
+
+<!--LINK FOR ION ICONS-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>    

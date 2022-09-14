@@ -1,0 +1,54 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Delete Brand From Database</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Delete - {{ item }} -</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Brand Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+        <div class="delete-form">
+                <div class="text">
+                    <p class="text-delete">Are you sure you want to delete  - {{ item }} -  ?</p> 
+                    <p class="text-delete">You wont be able to revert this action!</p>
+                </div>
+               <div class="buttons">
+                    <form method=POST action="{% url 'delete_brand' item.id %}">
+                    {% csrf_token %}
+
+                        <div class="btns">
+                            <div>
+                                <a href="{% url 'brand_list' %}" class="btn-cancel-delete"> Cancel! </a>
+                            </div> 
+                            <div>
+                                <input type="submit" name="Yes, delete it!" class="btn-confirm-delete">
+                            </div>
+                        <div>
+                    </form>
+               </div>
+           </div>
+           </div>
+        </div>
+        <!--End: Main Page Contents -->
+        
+
+
+    </div>
+<!--End: Contents (next to sidebar)-->
+
+</form>
+
+{% endblock content %}

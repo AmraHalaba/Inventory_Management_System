@@ -1,0 +1,106 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">All Users</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">All Users</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> Users Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!-- Start: Table Options - Table1-->
+            <div class="table-options">
+                <div class="header-search">
+                        <form class="search-bar" method="POST">
+                        {% csrf_token %}
+                            <input type="search" name="searched" placeholder="Search users by surname">
+                            <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                        </form>
+                    </div>
+                <div class="buttons">
+                    {% comment %} <button class="pdf"> <a href="#"> </a> <i class="fa-solid fa-file-pdf"></i> PDF </button> {% endcomment %}
+                    <a href="{% url 'users_list_csv' %}"> <button class="exc"> <i class="fa-solid fa-table"></i> Excel </button>  </a>
+                    {% comment %} <button class="crt"> <i class="fa-solid fa-circle-plus"></i> Create </button> </a> {% endcomment %}
+                </div>
+            </div>
+            <!-- End: Table Options - Table1-->
+            
+            <!--Start: Table - Table1-->
+            <table class="table-1 user-list">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+
+                    {% comment %} <th>Phone</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Action</th> {% endcomment %}
+                </thead>
+                {% for user in page_items %} 
+                <tbody>
+                    <tr>
+                        <td data-label="First Name">{{ user.first_name }}</td>
+                        <td data-label="Last Name">{{ user.last_name }}</td>
+                        <td data-label="Username">{{ user.username }}</td>
+                        <td data-label="E-mail">{{ user.email }}</td>
+
+                        {% comment %} <td>{{ user.phone }}</td>
+                        <td>{{ user.role }}</td>
+                        <td>{{ user.status }}</td> {% endcomment %}
+                        {% comment %} <td>
+                            <div class="icons">
+                                <div class="icon edit" data-tooltip="Edit">
+                                    <a class="btn-edit" href="#"> <span>
+                                            <ion-icon name="pencil-outline"></ion-icon>
+                                        </span> </a>
+                                </div>
+                            </div>
+                        </td> {% endcomment %}
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+            <!--End: Table - Table1-->
+
+            <!--Start: Selection of Row Numbers in Table - Table1-->
+            <div class="sel-no-rows">
+                {% if page_items.has_previous %}
+                    <div class="row-title"> <p> <a href="?page=1"> &laquo First </a> </p> </div>
+                    <div class="row-title"> <p> <a href="?page={{ page_items.previous_page_number }}"> Previous </a> </p> </div>
+                {% endif %}
+
+                <div class="current"> <p> Page {{ page_items.number }} of {{ page_items.paginator.num_pages }} </p> </div>
+
+                {% if page_items.has_next %}
+                    <div class="row-title"> <p> <a href="?page={{ page_items.next_page_number }}"> Next </a> </p> </div>
+                    <div class="row-title"> <p> <a href="?page={{ page_items.paginator.num_pages }}"> Last &raquo </a> </p> </div>
+                {% endif %} 
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--End: Selection of Row Numbers in Table - Table1-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

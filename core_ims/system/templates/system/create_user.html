@@ -1,0 +1,100 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+            <!--Start: Individual Page Title-->
+            <h1 class="title">Create User</h1>
+            <ul class="breadcrumbs">
+                <li> <a href="#">Create User</a> </li>
+                <li class="divider"> | </li>
+                <li> <a href="#" class="active"></a> User Management </li>
+            </ul>
+            <hr>
+            <!--End: Individual Page Title-->
+
+            <!--Start: Create Product Form - Table2-->
+            <div class="table-2 create-product">
+                <form action="submit">
+                    <div class="columns">
+                        <div class="col-left">
+                            <div>
+                                <label for="first-name">First Name *</label><br>
+                                <input type="text" placeholder="First Name" required>
+                            </div>
+                            <div>
+                                <label for="username">Username *</label><br>
+                                <input type="text" placeholder="Username" required>
+                            </div>
+                            <div>
+                                <label for="email">Email *</label><br>
+                                <input type="text" placeholder="Email" required>
+                            </div>
+                            <div>
+                                <label for="role">Role *</label><br>
+                                <select name="Choose Role" id="" required>
+                                    <option value="lorem" disabled selected hidden>Please select</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </div>    
+                            <div class="user-image">
+                                <input type="file" id="file" name="avatar" accept="image/*">
+                                <label for="file">
+                                    <span class="material-icons">add_photo_alternate</span> &nbsp;
+                                    Upload User Image
+                                </label>
+                            </div>                                                  
+                        </div>
+
+                        <div class="col-right">
+                            <div>
+                                <label for="last-name">Last Name *</label><br>
+                                <input type="text" placeholder="Last Name *" required>
+                            </div>
+                            <div>
+                                <label for="phone">Phone *</label><br>
+                                <input type="text" placeholder="Phone" required>
+                            </div>
+                            <div>
+                                <label for="password">Password *</label><br>
+                                <input type="text" placeholder="Password" required>
+                            </div>
+                            <div>
+                                <label for="assigned-warehouses">Assigned Warehouses *</label><br>
+                                <select name="Choose Assigned Warehouses" id="" required>
+                                    <option value="lorem" disabled selected hidden>Please select</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </div>
+                            
+                        </div>    
+                    </div>
+                    <div class="rows">
+                        <label for="product-note">Note</label><br>
+                        <textarea rows="4" cols="50" name="comment" form="usrform">A few words ...</textarea><br>
+                    </div>
+                    <input type="submit" value="Submit" class="btn-submit">
+                </form>
+            </div>
+        </div>
+            <!--End: Create Product Form - Table2-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+
+{% endblock content %}

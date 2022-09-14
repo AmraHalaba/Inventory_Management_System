@@ -1,0 +1,134 @@
+{% extends 'system/includes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+ <!--Start: Contents (next to sidebar)-->
+    <div class="contents">
+
+        <!--Start: Main Page Contents -->
+        <div class="home-content">
+
+        <!--Start: Individual Page Title-->
+        <h1 class="title">All Brands</h1>
+        <ul class="breadcrumbs">
+            <li> <a href="#">All Brands</a> </li>
+            <li class="divider"> | </li>
+            <li> <a href="#" class="active"></a> Brand Management </li>
+        </ul>
+        <hr>
+        <!--End: Individual Page Title-->
+
+
+          
+
+            {% if page_items|length > 0 %}
+                <!-- Start: Table Options - Table1-->
+                <div class="table-options">
+                    <div class="header-search">
+                        <form class="search-bar" method="POST">
+                        {% csrf_token %}
+                            <input type="search" name="searched" placeholder="Search brands by name">
+                            <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                        </form>
+                    </div>
+                    <div class="buttons">
+                        {% comment %} <button class="pdf"> <a href="#"> </a> <i class="fa-solid fa-file-pdf"></i> PDF </button> {% endcomment %}
+                        <a href="{% url 'brand_list_csv' %}"> <button class="exc"> <i class="fa-solid fa-table"></i> Excel </button>  </a>
+                        <a href="{% url 'create_brand' %}"> <button class="crt">  <i class="fa-solid fa-circle-plus"></i> Create </button></a>
+                    </div>
+                </div>
+                <!-- End: Table Options - Table1-->
+
+                 {% if messages %}
+                    <div class="success-msg">
+                        <ul class="messages">
+                            {% for message in messages %}
+                                    <li>
+                                        {{ message }}
+                                    </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                
+                <!--Start: Table - Table1-->
+                <div>
+                    <table class="table-1">
+                        <thead>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Note</th>
+                            <th>Action</th>
+                        </thead>
+                        {% for brand in page_items %}
+                            <tbody>
+                                <tr>
+                                    <td data-label="Code">{{ brand.code }}</td>
+                                    <td data-label="Name">{{ brand.name }}</td>
+                                    <td data-label="Note">{{ brand.description }}</td>
+                                    <td data-label="Action">
+                                        <div class="icons">
+                                            <div class="icon edit" data-tooltip="Edit">
+                                                <a class="btn-edit" href="{% url 'update_brand' brand.id %}"> <span>
+                                                        <ion-icon name="pencil-outline"></ion-icon>
+                                                    </span> </a>
+                                            </div>
+                                            <div class="icon delete" data-tooltip="Delete">
+                                                <a class="btn-delete" href="{% url 'delete_brand' brand.id %}"> <span>
+                                                        <ion-icon name="close-circle-outline"></ion-icon>
+                                                    </span> </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+                <!--End: Table - Table1-->
+                
+                {% else %}
+                    <div class="create-first">
+                        <div class="create-first-txt-btn">
+                            <div class="text">
+                                <h3>No brands</h3>
+                            </div>
+                            <div class="btn"> 
+                            <a href="{% url 'create_brand' %}"> <button class="crt">  <i class="fa-solid fa-circle-plus"></i> Create </button></a>
+                        </div>
+                        </div>
+                        <div class="create-first-img"> 
+                            <img class="create-first-entry" src="{% static 'system/images/create_first.png' %}" alt="Create first entry">
+                        </div>
+                    </div> 
+            {% endif %}
+
+            <!--Start: Selection of Row Numbers in Table - Table1-->
+            <div class="sel-no-rows">
+                {% if page_items.has_previous %}
+                    <div class="row-title"> <p> <a href="?page=1"> &laquo First </a> </p> </div>
+                    <div class="row-title"> <p> <a href="?page={{ page_items.previous_page_number }}"> Previous </a> </p> </div>
+                {% endif %}
+
+                <div class="current"> <p> Page {{ page_items.number }} of {{ page_items.paginator.num_pages }} </p> </div>
+
+                {% if page_items.has_next %}
+                    <div class="row-title"> <p> <a href="?page={{ page_items.next_page_number }}"> Next </a> </p> </div>
+                    <div class="row-title"> <p> <a href="?page={{ page_items.paginator.num_pages }}"> Last &raquo </a> </p> </div>
+                {% endif %} 
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--End: Selection of Row Numbers in Table - Table1-->
+
+        </div>
+        <!--End: Main Page Contents -->
+
+    </div>
+    <!--End: Contents (next to sidebar)-->
+
+{% endblock content %}
